@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* format css */
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        /* căn giữa màn hình cho form */
+        html{
+            font-family: sans-serif;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        /* xử lý form */
+        form {
+            box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.5);
+            width: 450px;
+            padding: 16px 32px;
+            
+        }
+        /* Xử lý form-group-name */
+        .form-group-name{
+            margin-top: 32px;
+        }
+
+        /* Xử lý chung form-group-name, form-group-email và form-group-phone*/
+        .form-group-name, 
+        .form-group-email, 
+        .form-group-phone {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .form-group-name input, 
+        .form-group-email input, 
+        .form-group-phone input {
+            padding: 6px 12px;
+            width: 100%;
+            margin-top: 4px;
+        } 
+        .form-group-name label, 
+        .form-group-email label, 
+        .form-group-phone label {
+            display: block;
+            width: 100%;
+        }
+        
+        /* Xử lý form-goup-gender */
+        .form-group-gender {
+            margin-top: 16px;
+            display: flex;
+        }
+        .form-group-gender .gender-heading {
+            width: 25%;
+        }
+        .form-group-gender input {
+            margin-right: 4px;
+        }
+        .form-group-gender label {
+            margin-right: 16px;
+        }
+
+        /* Xử lý botton đăng ký */
+        .btn-dang-ky {
+            margin-top: 32px;
+            font-size: 16px;
+            padding: 6px 0;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+        <h1 class="form-heading">Đăng ký</h1>
+        <div class="form-group-name">
+            <label for="name-id">Họ và tên</label>
+            <input type="text" name="name" id="name-id">
+        </div>
+        <div class="form-group-email">
+            <label for="email-id">Email</label>
+            <input type="text" name="email" id="email-id">
+        </div>
+        <div class="form-group-phone">
+            <label for="phone-id">Số điện thoại</label>
+            <input type="text" name="phone" id="phone-id">
+        </div>
+        
+        <div class="form-group-gender">
+            <p class="gender-heading">Giới tính: </p>
+            <input type="radio" name="gender" id="gender-nam">
+            <label for="gender-nam">Nam</label>
+            <input type="radio" name="gender" id="gender-nu">
+            <label for="gender-nu">Nữ</label>
+        </div>
+        <input class="btn-dang-ky" type="button" value="Đăng ký">
+    </form>
+</body>
+</html>

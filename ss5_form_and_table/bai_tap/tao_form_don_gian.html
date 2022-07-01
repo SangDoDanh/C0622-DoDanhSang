@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo form đơn giản</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        /* Căn form ra giữa màn hình */
+        html{
+            font-family: sans-serif;
+        }
+        .app {
+            padding: 32px 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        form {
+            margin: 0 32px;
+            width: 50%;
+            box-shadow: 0.5px 1.2px 5px rgba(0, 0, 0, 0.5);
+            
+        }
+
+        #form-hobby {
+
+        }
+
+        #form-signup{
+
+        }
+
+        .form-heading{
+            background-color: orangered;
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+
+        }
+        .group-email, .group-fullname, .group-hobby, .group-submit-and-reset {
+            display: flex;
+            padding : 12px 48px;
+        }
+        
+        
+        /* Xử lý chung group-email và group-fullname*/
+        .group-email label, .group-fullname label {
+            line-height: 100%;
+            padding: 4px;
+            width: 25%;
+        }
+
+        /* xử lý chung input email và input fullname */
+        .group-email input, .group-fullname input {
+            padding: 4px 12px;
+            flex: 1;
+        }
+        
+        /* Xử lý cho group-hobby */
+        .group-hobby{
+            flex-wrap: wrap;
+        }
+        .group-hobby p{
+            width: 25%;
+        }
+        .groubp-hobby-container {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .group-hobby .group-hobby-checkbox {
+            width: 33.33333%;
+            margin-bottom: 12px;
+        }
+        .group-hobby-checkbox input{
+            padding: 4px;
+        }
+        
+        label[for*="hobby"] {
+            color: orange;
+        }
+
+        /* Xử lý cho group-submit-and-reset */
+        .group-submit-and-reset {
+            padding-left: 29%;
+        }
+        .group-submit-and-reset input{
+            padding: 6px 12px;
+            margin-right: 16px;
+            width: 150px;
+            border-radius: 2px;
+            border: none;
+            background-color: orangered;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Xử lý form Đăng Ký Học Viên -----------------------------*/
+        #form-signup{
+           
+        }
+        .form-group-name{
+            margin-top: 32px;
+        }
+
+        /* Xử lý chung các "signup-group" cho [form signup]*/
+        .signup-group-name, 
+        .signup-group-email, 
+        .signup-group-phone,
+        .signup-group-birthday,
+        .signup-group-gender,
+        .signup-group-address,
+        .signup-group-class, 
+        .signup-group-button{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            padding: 0 32px;
+        }
+
+        .signup-group-name input, 
+        .signup-group-email input, 
+        .signup-group-phone input,
+        .signup-group-birthday input,
+        .signup-group-address textarea,
+        .signup-group-class select {
+            padding: 6px 12px;
+            width: 100%;
+            margin-top: 4px;
+        } 
+        .signup-group-name label, 
+        .signup-group-email label, 
+        .signup-group-phone label,
+        .signup-group-birthday label,
+        .signup-group-address label,
+        .signup-group-class label
+         {
+            width: 100%;
+        }
+        
+        /* Xử lý "signup-goup-gender" cho [form signup]*/
+        .signup-group-gender {
+            margin-top: 16px;
+            display: flex;
+        }
+        .signup-group-gender .gender-heading {
+            width: 25%;
+        }
+        .signup-group-gender input {
+            margin-right: 4px;
+        }
+        .signup-group-gender label {
+            margin-right: 16px;
+        }
+
+        /* Xử lý "group-birthday-phone" cho [form signup] */
+        .group-birthday-phone {
+            display: flex;
+        }
+
+        .signup-group-phone,
+        .signup-group-birthday {
+            width: 50%;
+
+        }
+
+        /* Xử lý "sigup-group-address" cho [form signup] */ 
+        .signup-group-address {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .signup-group-address label {
+            width: 100%;
+        }
+
+
+        /* Xử lý "signup-group-button" cho [form signup] */
+        .signup-group-button {
+            justify-content: space-around;
+            margin-bottom: 32px;
+        }
+        .signup-button {
+            margin-top: 32px;
+            font-size: 16px;
+            padding: 6px 0;
+            width: 35%;
+            border: none;
+            border-radius: 2px;
+            background-color: orangered;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <form id ="form-hobby" action="" method="post" name="form-so-thich">
+            <h2 class="form-heading">SỞ THÍCH CỦA BẠN</h2>
+            <div class="group-fullname">
+                <label for="yourname-id">Họ và Tên</label>
+                <input type="text" name="yourname" id="yourname-id">
+            </div>
+            <div class="group-email">
+                <label for="email-id">Email</label>
+                <input type="email" name="email" id="email-id">
+            </div>
+            <div class="group-hobby">
+                <p>Sở thích</p>
+                <div class="groubp-hobby-container">
+                    <div class="group-hobby-checkbox">
+                        <input type="checkbox" name="hobby" id="" >
+                        <label for="hobby-the-thao">Thể thao</label>
+                    </div>
+                    
+                    <div class="group-hobby-checkbox">
+                        <input type="checkbox" name="hobby" id="" >
+                        <label for="hobby-web"> Lướt web</label>
+                    </div>
+                    
+                    <div class="group-hobby-checkbox">
+                        <input type="checkbox" name="hobby" id="" >
+                        <label for="hobby-music">Nghe nhạc</label>
+                    </div>
+                    
+                    <div class="group-hobby-checkbox">
+                        <input type="checkbox" name="hobby" id="" >
+                        <label for="hobby-film">Xem phim</label>
+                    </div>
+                    
+                    <div class="group-hobby-checkbox">
+                        <input type="checkbox" name="hobby" id="" >
+                        <label for="hobby-game">Chơi game</label>
+                    </div>
+                    
+                    <div class="group-hobby-checkbox">
+                        <input type="checkbox" name="hobby" id="" >
+                        <label for="hobby-dien-anh">Điện ảnh</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="hobby" id="">
+                        <label for="hobby-du-lich">Du lịch</label>
+                    </div>
+                </div>
+            </div>
+            <div class="group-submit-and-reset">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+            
+           
+        </form>
+        <form id="form-signup" action="" method="post" name="form-dang-ky">
+            <h1 class="form-heading">Đăng Ký Học Viên</h1>
+            <div class="signup-group-name">
+                <label for="name-id">Họ và tên</label>
+                <input type="text" name="name" id="name-id">
+            </div>
+            <div class="signup-group-email">
+                <label for="email-id">Email</label>
+                <input type="text" name="email" id="email-id">
+            </div>
+            <div class="group-birthday-phone">
+                <div class="signup-group-birthday">
+                    <label for="birthday-id">Ngày sinh</label>
+                    <input type="text" name="birthday" id="birthday-id">
+                </div>
+                <div class="signup-group-phone">
+                    <label for="phone-id">Số điện thoại</label>
+                    <input type="text" name="phone" id="phone-id">
+                </div>
+            </div>
+            
+            <div class="signup-group-gender">
+                <p class="gender-heading">Giới tính: </p>
+                <input type="radio" name="gender" id="gender-nam">
+                <label for="gender-nam">Nam</label>
+                <input type="radio" name="gender" id="gender-nu">
+                <label for="gender-nu">Nữ</label>
+            </div>
+            <div class="signup-group-address">
+                <label for="address-id">Địa chỉ</label>
+                <textarea name="address" id="address-id" cols="30" rows="3"></textarea>
+            </div>
+            <div class="signup-group-class">
+                <label for="class-id">Lớp</label>
+                <select name="class" id="class-id">
+                    <option value="">--Chọn lớp--</option>
+                    <option value="lop-a">Lớp A</option>
+                    <option value="lop-b">Lớp B</option>
+                </select>
+            </div>
+            <div class="signup-group-button">
+                <input class="signup-button btn-dang-ky" type="button" value="Đăng ký">
+                <input class="signup-button btn-reset" type="reset" value="Nhập lại">
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

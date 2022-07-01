@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo form cơ bản</title>
+    <style>
+        *{
+            font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h1>Order Form</h1>
+        <p>What would you like to buy?</p>
+        <select name="select-abc" id="">
+            <option value="A" >A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <p>How many would you like to order?</p>
+        <label for="oder-1"><input type="radio" name="oder" id="oder-1" value="10">1-20$</label>
+        <label for="oder-2"><input type="radio" name="oder" id="oder-2" value="10">2-20$</label>
+        <label for="oder-3"><input type="radio" name="oder" id="oder-3" value="10">3-25$</label>
+        <h3>Name <span style="color: red;">*</span></h3>
+        <input type="text" name="f-name" id="" placeholder="fist name">
+        <input type="text" name="last-name" id="" placeholder="last name">
+        <h3>Email</h3>
+        <input type="email" name="email" id="">
+        <h3>Phone Number</h3>
+        <input type="text" name="" id=""> <span>-</span>
+        <input type="text" name="" id=""> <span>-</span>
+        <input type="text" name="" id=""> <br><br>
+        <input type="button" value="Submit">
+    </form>
+   
+</body>
+</html>
