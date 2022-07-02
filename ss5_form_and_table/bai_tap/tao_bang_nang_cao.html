@@ -16,7 +16,10 @@
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+        }
+
+        .container-left, .container-right {
+            padding: 32px 16px;
         }
         
         /* Xử lý "table-chess" */
@@ -48,11 +51,70 @@
         .table-chess tr td:nth-child(1) {
 
         }
+
+        /* Xử lý table-calendar */
+        .table-calendar {
+            
+        }
+        .table-calendar tr, .table-calendar td {
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .table-calendar tr:first-child th {
+            background-color: rgba(255, 68, 0, 0.8);
+            color: aliceblue;
+            height: 40px;
+            width: 65px;
+        }
+
+        .table-calendar tr td:first-child {
+            color: red;
+        }
+
+        .table-calendar tr td:last-child {
+            color: blue;
+        }
+        .table-calendar tr:first-child th:first-child {
+            background-color: red;
+        }
+
+        .table-calendar tr:first-child th:last-child {
+            background-color: blue;
+        }
+
+        .table-calendar tr td .date-small {
+            color: black;
+        }
+
+        .table-calendar tr:nth-child(2) td {
+            border: none;
+        }
+        .table-calendar td {
+            width: 65px;
+            height: 40px;
+            position: relative;
+        }
+        .table-calendar .date-small, .table-calendar .date-big {
+        }
+
+        .table-calendar .date-big {
+            font-size: 20px;
+        }
+
+        .table-calendar .date-small {
+            position: absolute;
+            font-size: 12px;
+            display: block;
+            right: 12%;
+            top: 50%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <table class="table-chess">
+        <div class="container-left">
+            <table class="table-chess">
             <tr>
                 <td></td>
                 <td>1</td>
@@ -183,7 +245,181 @@
 
             </tr>
            
-        </table>
+            </table>
+        </div>
+        <div class="container-right">
+            <table class="table-calendar">
+                <tr>
+                    <th>C.Nhật</th>
+                    <th>T.Hai</th>
+                    <th>T.Ba</th>
+                    <th>T.Tư</th>
+                    <th>T.Năm</th>
+                    <th>T.Sáu</th>
+                    <th>T.Bảy</th>
+                </tr>
+                <tr>
+                    <td>Sun</td>
+                    <td>Mon</td>
+                    <td>Tue</td>
+                    <td>Web</td>
+                    <td>Thu</td>
+                    <td>Fri</td>
+                    <td>Sat</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span class="date-big">1</span>
+                        <span class="date-small">13</span>
+                    </td>
+                    <td>
+                        <span class="date-big">2</span>
+                        <span class="date-small">14</span>
+                    </td>
+                    <td>
+                        <span class="date-big">3</span>
+                        <span class="date-small">15</span>
+                    </td>
+                    <td>
+                        <span class="date-big">4</span>
+                        <span class="date-small">16</span>
+                    </td>
+                </tr>
+
+                <!-- hang lịch 2 -->
+                <tr>
+                    <td>
+                        <span class="date-big">5</span>
+                        <span class="date-small">17</span>
+                    </td>
+                    <td>
+                        <span class="date-big">6</span>
+                        <span class="date-small">18</span>
+                    </td>
+                    <td>
+                        <span class="date-big">7</span>
+                        <span class="date-small">19</span>
+                    </td>
+                    <td>
+                        <span class="date-big">8</span>
+                        <span class="date-small">20</span>
+                    </td>
+                    <td>
+                        <span class="date-big">9</span>
+                        <span class="date-small">21</span>
+                    </td>
+                    <td>
+                        <span class="date-big">10</span>
+                        <span class="date-small">22</span>
+                    </td>
+                    <td>
+                        <span class="date-big">11</span>
+                        <span class="date-small">23</span>
+                    </td>
+                    
+                </tr>
+
+                <!-- Hàng thứ 3 -->
+                <tr>
+                    <td>
+                        <span class="date-big">12</span>
+                        <span class="date-small">22</span>
+                    </td>
+                    <td>
+                        <span class="date-big">13</span>
+                        <span class="date-small">23</span>
+                    </td>
+                    <td>
+                        <span class="date-big">14</span>
+                        <span class="date-small">24</span>
+                    </td>
+                    <td>
+                        <span class="date-big">15</span>
+                        <span class="date-small">25</span>
+                    </td>
+                    <td>
+                        <span class="date-big">16</span>
+                        <span class="date-small">26</span>
+                    </td>
+                    <td>
+                        <span class="date-big">17</span>
+                        <span class="date-small">27</span>
+                    </td>
+                    <td>
+                        <span class="date-big">18</span>
+                        <span class="date-small">28</span>
+                    </td>
+                    
+
+                    <!-- Hàng thứ 4 -->
+                <tr>
+                    <td>
+                        <span class="date-big">19</span>
+                        <span class="date-small">29</span>
+                    </td>
+                    <td>
+                        <span class="date-big">20</span>
+                        <span class="date-small">1/9</span>
+                    </td>
+                    <td>
+                        <span class="date-big">14</span>
+                        <span class="date-small">2</span>
+                    </td>
+                    <td>
+                        <span class="date-big">15</span>
+                        <span class="date-small">3</span>
+                    </td>
+                    <td>
+                        <span class="date-big">16</span>
+                        <span class="date-small">4</span>
+                    </td>
+                    <td>
+                        <span class="date-big">17</span>
+                        <span class="date-small">5</span>
+                    </td>
+                    <td>
+                        <span class="date-big">18</span>
+                        <span class="date-small">6</span>
+                    </td>
+                    
+                </tr>
+
+                <!-- Hàng thứ 5 -->
+                <tr>
+                    <td>
+                        <span class="date-big">19</span>
+                        <span class="date-small">7</span>
+                    </td>
+                    <td>
+                        <span class="date-big">20</span>
+                        <span class="date-small">8</span>
+                    </td>
+                    <td>
+                        <span class="date-big">21</span>
+                        <span class="date-small">9</span>
+                    </td>
+                    <td>
+                        <span class="date-big">22</span>
+                        <span class="date-small">10</span>
+                    </td>
+                    <td>
+                        <span class="date-big">23</span>
+                        <span class="date-small">11</span>
+                    </td>
+                    <td>
+                        <span class="date-big">24</span>
+                        <span class="date-small">12</span>
+                    </td>
+                    <td>
+                        <span class="date-big">25</span>
+                        <span class="date-small">13</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
