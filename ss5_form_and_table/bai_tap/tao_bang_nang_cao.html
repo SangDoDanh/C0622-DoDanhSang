@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bảng nâng cao</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Xử lý "table-chess" */
+        .table-chess {
+            border-collapse: collapse;
+        }
+        .table-chess tr td {
+            height: 50px;
+            width: 50px;
+            text-align: center;
+        }
+
+        /* Hàng chẵn tô màu đen cho ô lẻ */
+        .table-chess tr:nth-child(even) td:nth-child(odd) {
+            background-color: black;
+        }
+        
+        /* Hàng lẻ tô màu đen cho ô chẵn */
+        .table-chess tr:nth-child(odd) td:nth-child(even) {
+            background-color: black;
+        }
+        /* Tô màu viền */
+        .table-chess tr:first-child td, .table-chess tr td:first-child,
+        .table-chess tr:last-child td, .table-chess tr td:last-child {
+            background-color: burlywood !important;
+
+        }
+
+        .table-chess tr td:nth-child(1) {
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table class="table-chess">
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>A</td>
+
+            </tr>
+            <tr>
+                <td>B</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>B</td>
+
+            </tr>
+            <tr>
+                <td>C</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>C</td>
+
+            </tr>
+            <tr>
+                <td>D</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>D</td>
+
+            </tr>
+            <tr>
+                <td>E</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>E</td>
+
+            </tr>
+            <tr>
+                <td>F</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>F</td>
+
+            </tr>
+            <tr>
+                <td>G</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>G</td>
+
+            </tr>
+            <tr>
+                <td>H</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>H</td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td></td>
+
+            </tr>
+           
+        </table>
+    </div>
+</body>
+</html>

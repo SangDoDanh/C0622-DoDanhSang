@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bảng đơn giản</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, td, th {
+            border: 1px solid gray;
+
+        }
+
+        td, td, th {
+            padding: 8px 12px
+        }
+        /* Xử lý cho con "Container" */
+        .container {
+            display: flex;
+            
+        }
+
+        /* Xử lý chung cho "table-left" và "table-right" */
+        .table-left, .table-right {
+            padding: 24px 16px;
+
+        }
+        /* Xử lý cho table-left */
+        .table-left {
+            width: 30%;
+        }
+        
+        .table-left p {
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 20px;
+            color: blue;
+        }
+
+        /* Xử lý cho table-right */
+        .table-right {
+            flex: 1;
+        }
+
+        /* Xử lý cho table-basic */
+        .table-basic {
+            width: 100%;
+        }
+
+        .table-basic th {
+            background-color: burlywood;
+        }
+        /* Xử lý cho table-title*/
+        .table-title {
+            width: 100%;
+        }
+        .table-title, .table-title th, .table-title td {
+            border: none;
+
+        }
+
+        .table-title tr:nth-child(1) th {
+            color: blue;
+            font-size: 24px;
+        }
+        .table-title tr:nth-child(2) td:nth-child(2) {
+            text-align: right;
+        }
+        .table-title p {
+            margin-bottom: 8px;
+            color: blue;
+        }
+
+        /* Xử lý cho table-advance */
+        .table-advance {
+            width: 100%;
+        }
+
+        .table-advance th{
+            background-color: bisque;
+        }
+        .table-advance th:nth-child(1) {
+            background: none;
+        }
+        .table-advance tr:nth-child(2) {
+            background-color: burlywood;
+        }
+        
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="table-left">
+        <p>Thời khóa biểu lớp c0622g1</p>
+        <table class="table-basic">
+            <tr>
+                <th>Thứ 3</th>
+                <th>Thứ 5</th>
+                <th>Thứ 7</th>
+            </tr>
+            <tr>
+                <td>BP.L1</td>
+                <td>BP.L2</td>
+                <td>BP.L3</td>
+            </tr>
+            <tr>
+                <td>BP.L2</td>
+                <td>BP.L2</td>
+                <td>BP.L2</td>
+            </tr>
+        </table>
+    </div>
+    <div class="table-right">
+        <table class="table-title">
+            <tr>
+                <th colspan="2">THỜI KHÓA BIỂU</th>
+            </tr>
+            <tr>
+                <td>
+                    <p>Lớp: C0622G1</p>
+                    <p>Giáo Viên: Chanh.TV</p>
+                    <p>Phòng học: Ada</p>
+                </td>
+                <td>
+                    <p>Thời gian học: 8h-17h</p>
+                    <p>Ngày học: Thứ 2 - thứ 6</p>
+                </td>
+            </tr>
+        </table>
+        <table class="table-advance">
+            <tr>
+                <th colspan="3"></th>
+                <th>Thứ 3</th>
+                <th>Thứ 5</th>
+                <th>Thứ 7</th>
+            </tr>
+            <tr>
+                <td>Tuần</td>
+                <td>Ngày bắt đầu</td>
+                <td>Ngày kết Thúc</td>
+                <td colspan="3" style="text-align: center;">Môn học</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>01/9/2022</td>
+                <td>01/10/2022</td>
+                <td>HTML/CSS</td>
+                <td>Javascript</td>
+                <td>Java</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>01/10/2022</td>
+                <td>01/11/2022</td>
+                <td>PHP</td>
+                <td>SQL</td>
+                <td>Reactive</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </table>
+    </div>
+  </div>
+</body>
+</html>
