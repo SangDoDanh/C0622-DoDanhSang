@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert currency</title>
+    <style>
+        .app{
+            margin: 0 auto;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 600px;
+        }
+       
+        .group {
+            margin-right: 32px;
+        }
+
+        .group p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            font-size: 16px;
+            padding: 6px;
+        }
+        
+        #amount-id {
+            padding: 6px;
+            font-size: 16px;
+        }
+
+        #convert-button-id {
+            width: 100%;
+            font-size: 16px;
+            padding: 8px 0;
+            margin: 12px 0;
+            color: rgb(252, 252, 252);
+            background-color: rgb(0, 179, 255);
+            text-transform: uppercase;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        #result-id {
+            border: none;
+            border-bottom: 1px solid gray;
+            padding: 6px;
+            font-size: 16px;
+            width: 100%;
+            color: blue;
+            background-color: azure;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="group amount-group">
+            <p>Amount</p>
+            <input type="text" name="amount" id="amount-id">
+        </div>
+        <div class="group from-currency-group">
+            <p>From currency</p>
+            <select name="from-curr" id="from-curr-id">
+                <option value="vnd">Viet nam</option>
+                <option value="usd">Usd</option>
+            </select>
+        </div>
+        <div class="group to-currency-group">
+            <p>To currency</p>
+            <select name="to-curr" id="to-curr-id" disabled>
+                <option value="usd">Usd</option>
+                <option value="vnd">Viet nam</option>
+            </select>
+        </div>
+        <input type="button" value="Convert" id="convert-button-id">
+        <input type="text" name="result" id="result-id" disabled>
+    </div>
+    <script src="convert_currency.js"></script>
+</body>
+</html>
