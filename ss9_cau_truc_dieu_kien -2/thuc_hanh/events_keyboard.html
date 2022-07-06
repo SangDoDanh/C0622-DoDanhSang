@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-l2-Event keyboard</title>
+</head>
+<body>
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+
+    <script>
+        let img = document.getElementById('nobita')
+        console.log(img)
+
+        function init() {
+            img.style.position = 'relative'
+            img.style.left = '0px'
+        }
+
+        // move left
+        function moveLeft() {
+            img.style.left = parseInt(img.style.left) - 5 + 'px'  
+        }
+        // move right
+        function moveRight() {
+            img.style.left = parseInt(img.style.left) + 5 + 'px'  
+        }
+        // move top
+        function moveTop() {
+            img.style.top = parseInt(img.style.top) - 5 + 'px'  
+        }
+        // move down
+        function moveDown() {
+            img.style.top = parseInt(img.style.top) + 5 + 'px'  
+        }
+
+        // key-selection
+        function keySelection(key) {
+            console.log(key.keyCode)
+            switch(key.keyCode) {
+                case 37:
+                    moveLeft()
+                    break;
+                case 38:
+                    moveTop()
+                    break;
+                case 39:
+                    moveRight()
+                    break;
+                case 40: 
+                    moveDown()
+                    break;   
+            }
+        }
+
+        init()
+        window.addEventListener('keydown', keySelection);
+        
+
+    </script>
+</body>
+</html>

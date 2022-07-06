@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-L1-Sự kiện chuột</title>
+</head>
+<body>
+    <form>
+        <img id="myImage" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style = "width: 30%"/>
+        <p>Click button below to move the image to right</p>
+        <input id = "btn-click" type="button" value="Click Me" />
+    </form>
+
+    <script>
+        var imgball = document.getElementById('myImage')
+        var btnClick = document.getElementById('btn-click')
+        var move = 0
+
+        console.log(imgball, btnClick)
+        function init () {
+            imgball.style.position = 'relative'
+            imgball.style.left = '0px'
+        } 
+
+        function moveRight () {
+            imgball.style.left = parseInt(imgball.style.left) + 10 + 'px'
+            console.log(12)
+        }
+        init()
+        btnClick.addEventListener("click", moveRight)
+    </script>
+</body>
+</html>

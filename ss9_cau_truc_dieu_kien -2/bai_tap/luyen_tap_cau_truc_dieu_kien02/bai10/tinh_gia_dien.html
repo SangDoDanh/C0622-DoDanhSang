@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-B8 Luyen tap cau truc dieu kien 02</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            font-size: 18px;
+            background-color: darkgray;
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .app{
+            width: 600px;
+            border: 1px solid aqua;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+        .app .group-elec {
+            margin-bottom: 16px;
+            width: 100%;
+            padding: 0 16px;
+            display: flex;
+        }
+        .app label {
+            font-size: 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            line-height: 100%;
+            margin-top: 20px;
+            width: 25%;
+        }
+        .app input {
+            padding: 8px 12px;
+            font-size: 24px;
+        }
+        #result {
+            border: none;
+            border-bottom: 2px solid aqua;
+            background-color: darkgray;
+            color: black;
+        }
+
+        .group-elec #btn-calculate {
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h1>TÍNH GIÁ ĐIỆN</h1>
+        <div class="group-elec">
+            <label for="electricity-number"> Số cũ</label>
+            <input type="text" name="" id="electricity-number" disabled>
+        </div>
+       <div class="group-elec">
+            <label for="new-electricity-number">Số mới</label>
+            <input type="text" name="" id="new-electricity-number">
+       </div>
+       <div class="group-elec">
+           <input type="button" value="Tính" id="btn-calculate">
+           <input type="text" disabled id="result">
+       </div>
+    </div>
+</body>
+<script>
+    let eElectricityNumber = document.getElementById('electricity-number'), 
+        eNewElectricityNumber = document.getElementById('new-electricity-number'), 
+        eCalculate = document.getElementById('btn-calculate');
+    // Khởi tạo giá trị ban đầu cho số điện cũ
+    // 1 số là 3.100 vnd
+    eElectricityNumber.value = 234
+    
+    eCalculate.addEventListener('click', calculationElectricity)
+    
+    function calculationElectricity() {
+        electricityNumber = parseFloat(eElectricityNumber.value)
+        newElectricityNumber = parseFloat(eNewElectricityNumber.value)
+        if(newElectricityNumber - electricityNumber) {
+            let total =  (newElectricityNumber - electricityNumber) * 3100
+            result.value = total + ' vnd'
+        } else {
+            alert('Nhập đúng số điện mới!')
+        }
+    }
+</script>
+</html>

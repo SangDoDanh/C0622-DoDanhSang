@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-B3-Calculator</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(185, 184, 184);
+
+        }
+        .app {
+            margin-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 34%;
+            padding: 4px;
+        }
+        .app .item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .result {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        #result-id {
+            width: 100%;
+            font-size: 40px;
+            text-align: right;
+            padding: 4px 8px;
+            border: none;
+            border-bottom: 2px solid aqua;
+        }
+        .btn{
+            font-size: 40px;
+            border: none;
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+            border-radius: 2px;
+            margin-bottom: 7px;
+        }
+        .btn:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body> 
+    <div class="app">
+        <div class="result">
+            <input type="text" name="" id="result-id" disabled placeholder="0">
+        </div>
+        <div class="item">
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" value="+">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" value="-">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" value="*">
+            <input type="button" value="C">
+            <input type="button" value="0">
+            <input type="button" value="=">
+            <input type="button" value="/">
+        </div>
+    </div>
+    <script>
+        let eItems = document.querySelectorAll('.item input'), 
+            eResult = document.getElementById('result-id');
+        for(let item of eItems) {
+            item.classList.add('btn-' + item.value)
+            item.classList.add('btn')
+        }
+        let result = 0, 
+            ebtnValue0 = document.querySelector('.btn-0');
+            console.log(ebtnValue0)
+        // Xử lý khi click vao btn
+        for(let item of eItems) {
+            item.addEventListener('click', function() {
+                switch(item.value) {
+                    case '=':
+                        console.log(eResult.value)
+                        eResult.value = calculate(eResult.value)
+                        ebtnValue0.removeAttribute('disabled')
+                        break
+                    case 'C':
+                        console.log(eResult.value)
+                        eResult.value = ''
+                        ebtnValue0.removeAttribute('disabled')
+                        break
+                    case '/':
+                        eResult.value = eResult.value + item.value
+                        ebtnValue0.setAttribute('disabled', '')
+                        break
+                    default :
+                        eResult.value = eResult.value + item.value
+                        ebtnValue0.removeAttribute('disabled')
+                        break
+                }
+            });
+            
+        }
+        
+        function calculate(expression) {
+            return(eval(expression));
+        }
+
+    </script>
+</body>
+</html>

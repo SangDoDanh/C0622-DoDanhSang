@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Bài 5: Xếp hạng học lực của 
+    // học sinh dựa trên các điểm, điểm thi giữa kỳ he so 2,
+    // điểm thi cuối kỳ he so 3
+    /**
+     * Gioi: >9
+     * kha:  > 7
+     * tb: >5
+     * yeu: con lai
+     * */
+    let midtermExamScore = parseFloat(prompt('Midter score: '), 1), 
+        finalExamScore = parseFloat(prompt('filnal score: '), 1) ;
+
+    let avg = ((midtermExamScore * 2) + (finalExamScore * 3)) / 5;
+
+    console.log(avg)
+
+    if(avg > 9) {
+        alert(avg + ': GOI')
+    } else if(avg > 7) {
+        alert(avg + ': KHA')
+    } else if(avg > 5) {
+        alert(avg + ': TRUNG BINH')
+    } else {
+        alert(avg + ': YEU')
+    }
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9 Luyen tap voi cau truc dieu kien 2</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Bài 7: Giải phương trình bậc 2.
+    // ax^2 + bx + c = 0
+
+    let a = parseFloat(prompt('Nhap so a: ')), 
+        b = parseFloat(prompt('Nhap so b: ')), 
+        c = parseFloat(prompt('Nhap so c: '));
+    
+    if(a == 0) {
+        if(c == 0) {
+        alert('Phuong trinh VSN')
+        } else if(b == 0) {
+            alert('Phuong trinh VN')
+        } else {
+            alert('X = ' + -1 * c / b)
+        }
+    } else {
+        let delta = (b*b) - 4*a*c
+        if(delta > 0) {
+            let x1 = (-b + Math.sqrt(delta)) /(2 * a), 
+                x2 = (-b - Math.sqrt(delta)) /(2 * a)
+            alert('X1 = ' + x1 + '; X2 = ' + x2)
+        } else if(delta == 0) {
+            alert('X1 = X2 = ' + (-b / (2*a)))
+        } else {
+            alert('Phuong trinh vo nghiem')
+        }
+    }
+</script>
+</html>

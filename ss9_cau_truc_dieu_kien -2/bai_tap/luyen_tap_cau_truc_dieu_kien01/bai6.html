@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+    /**
+     * doanh so <= 10 hoa hong = 0
+     * doanh số bán hàng >= 10 -> hoa hồng 10%
+     * doanh so bán hàng >= 20 -> những danh số sau 10 sẽ được tính là 13%
+     * doanh số bán hàng >= 30 -> những doanh số sau 30 sẽ đueọc tính là 20% 
+     **/
+
+    let sales = parseFloat(prompt('danh so ban duoc: '), 0)
+    let commission = 0
+
+    if( sales > 30) {
+        commission = (sales - 30) * 0.2 + (30 - 20) * 0.13 + 10 * 0.1
+    } else if(sales > 20) {
+        commission = (sales - 20) * 0.13 + 10 * 0.1
+    } else if(sales > 10) {
+        commission = (sales - 10) * 0.1
+    } else {
+        commission = 0
+    }
+
+    alert('Hoa hong cua ban: ' + commission)
+</script>
+</html>

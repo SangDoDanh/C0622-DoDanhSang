@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9_B2_tinh-so-ngay-trong-thang</title>
+</head>
+<body>
+    <div class="app">
+        <label for="month">Nhập tháng:</label>
+        <input type="text" name="" id="month"><br><br>
+        <input type="button" value="Tính Số Ngày" id="count-date">
+    </div>
+
+    <script>
+        let eMonth = document.getElementById('month'), 
+            eCountDate = document.getElementById('count-date');
+
+        function countDateOfMonth() {
+            switch (parseInt(eMonth.value)) {
+            case 4: 
+            case 6: 
+            case 9: 
+            case 11: 
+                alert(`Tháng ${eMonth.value} có 30 ngày`)
+                break
+            case 2: 
+                alert(`Tháng ${eMonth.value} có 28 hoặc 29 ngày`)
+                break
+            default:
+                alert(`Tháng ${eMonth.value} có 31 ngày`)
+                break
+        }
+        }
+
+        eCountDate.addEventListener('click', countDateOfMonth)
+    </script>
+</body>
+</html>

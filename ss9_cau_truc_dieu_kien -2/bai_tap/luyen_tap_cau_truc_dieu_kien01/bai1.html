@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-B7- Luyen tap cau truc dieu kien 01</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia 
+    // hết cho b hay không
+    let numberA = parseFloat(prompt('Nhap gia tri cho a: ', 1)), 
+        numberB = parseFloat(prompt('Nhap gia tri cho b: ', 1));
+    
+    if(numberB == 0) {
+        alert('Khong the chia cho 0')
+    } else if(numberA % numberB == 0) {
+        alert(`${numberA} chia het cho ${numberB}`)
+    } else {
+        alert(`${numberA} khong chia het cho ${numberB}`)
+    }
+</script>
+</html>

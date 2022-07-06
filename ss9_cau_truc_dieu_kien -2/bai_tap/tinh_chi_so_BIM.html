@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-B1- Tính Chỉ Số BMI</title>
+</head>
+<body>
+    <div class="app">
+        <h1>Tính chỉ số cơ thể - BMI</h1>
+        <label for="height">Chiều cao:</label>
+        <input type="text" id="height"><br><br>
+        <label for="weigth">Cân nặng:</label>
+        <input type="text" id="weight"><br><br>
+        <input type="button" value="OK" id="btn-ok">
+    </div>
+
+    <script>
+        let eHeight = document.getElementById('height'), 
+            eWeight = document.getElementById('weight'), 
+            eOk = document.getElementById('btn-ok');
+        let bmi = parseFloat(eWeight.value) / eHeight.value * 2
+        
+        function calculatorBMI() {
+            if(bmi < 18.5) {
+            alert('Underweight')
+            } else if(bmi < 25.0) {
+                alert('Normal')
+            } else if(bmi , 30) {
+                alert('Overweight')
+            } else {
+                alert('Obese')
+            }
+        }
+        eOk.addEventListener('click', calculatorBMI)
+        
+    </script>
+</body>
+</html>

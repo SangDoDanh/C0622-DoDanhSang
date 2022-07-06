@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * Nhập vào số giây in ra giờ phút và giây
+     * ví dụ: 3600 -> 1h 0m 0s
+     **/
+    let second = parseInt(prompt('Nhap so giay: ', 1))
+    let minute = 0, hours = 0
+
+    hours = parseInt(second / 3600);
+    minute = parseInt((second - hours * 3600) / 60)
+    second -= (hours * 3600 + minute * 60)
+    alert(hours + 'h ' + minute +'m ' + second + 's')
+</script>
+</html>
