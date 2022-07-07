@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: darkgray;
+        }
+        .app {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        span{
+            padding: 0 8px;
+            width: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-family: sans-serif;
+            border: 1px solid aqua;
+            display: inline-block;
+            border-radius: 2px;
+            margin-right: 16px;
+            margin-bottom: 16px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+    </div>
+</body>
+<script>
+    // Hiển thị n số nguyên tố đầu tiên
+    let n = +prompt('Nhập vào số lượng số nguyên tố đầu tiên: ');
+    let index = 1;
+    let primeNumber = 2;
+    let source = '';
+    let eApp = document.querySelector('.app');
+
+    while(index <= n) {
+        if(isPrimeNumber(primeNumber)) {
+            source += `<span>${primeNumber}</span>`
+            index ++;
+            write(source);
+        }
+        primeNumber ++;
+    }
+    
+    function write(value) {
+        eApp.innerHTML = source;
+    }
+
+    function isPrimeNumber(number) {
+        if(number < 1){
+            return false
+        }
+        else {
+            let count = 1;
+            for(let i = 2; i <= number; i++) {
+                if(number % i == 0) {
+                    count ++;
+                }
+                if(count > 2)
+                    return false
+            }
+            return true
+        }
+    }
+    
+</script>
+</html>

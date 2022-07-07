@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss10-L3 Su dung vong lap do while</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /** Sử dụng vòng lặp do While
+     * Cho phép người dùng nhập vào 1 số
+     * phạm vi nhập là từ 1 -> 10
+     * nếu số người dùng nhập không ở trong phạm vị -> Người dùng phải nhập
+     * lại cho đúng
+     * hiển thị số người dùng vừa nhập
+     */
+    let numberInput  = 0;
+    do {
+        numberInput = +prompt('Nhập vào 1 số từ 1 -> 10: ')
+    } while (numberInput < 1 || numberInput > 10);
+    alert('Số bạn vừa nhập: ' + numberInput)
+</script>
+</html>

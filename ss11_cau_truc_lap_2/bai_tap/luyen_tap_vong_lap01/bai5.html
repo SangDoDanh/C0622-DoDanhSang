@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+        let count = 1
+        let number1 = 0, number2 = 1, fibonacci, total = 0;
+        while(count <= 20) {
+            fibonacci = number1 + number2
+            total += fibonacci;
+            number1 = number2;
+            number2 = fibonacci;
+            count ++
+            
+        }
+        alert('Tổng của 20 số đầu tiên trong dãy fibonacci:  ' + total)
+    </script>
+</html>

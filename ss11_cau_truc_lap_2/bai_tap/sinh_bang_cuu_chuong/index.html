@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: darkgray;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td {
+            border:  1px solid aqua;
+        }
+
+        td{
+            height: 30px;
+            padding: 0 4px;
+            text-align: left;
+            font-size: 16px;
+            font-family: sans-serif;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+    </div>
+    <table></table>
+    <td></td>
+
+    <script>
+        let source = '';
+        let eApp = document.querySelector('.app');
+        
+        // in bang cuu chuong
+        for(let i = 1; i <= 10; i ++) {
+            if(i == 1) {
+                source += '<table>'
+            }
+            source += '<tr>'
+            for(let j = 2; j <= 9; j ++) {
+                let value = j * i
+                source += `<td>${j} * ${i} = ${value}`
+            }
+            source += '</tr>'
+            if(i == 10) {
+                source += '</table>'
+            }
+        }
+        eApp.innerHTML = source
+    </script>
+</body>
+</html>

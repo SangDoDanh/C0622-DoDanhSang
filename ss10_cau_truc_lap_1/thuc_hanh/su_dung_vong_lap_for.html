@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss10-L1 Luyen tap su dung vong lap for</title>
+</head>
+<body>
+    
+    <script>
+        /**
+         * Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 
+         *        5 lần sử dụng vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.
+         * Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0.
+         *        Tính tổng các phần tử từ 1 đến số vừa nhập vào.
+         */
+        // bai 1
+        for(let i = 0; i <= 5; i++) {
+            document.writeln('The number is ' + i + '<br>')
+        }
+        // bai 2
+        let sum = 0 
+        let number = +prompt('Nhap vao 1 so > 0: ')
+        for(let j = 1; j <= number; j ++) {
+            sum += j
+        }
+        document.write('Total: ' + sum)
+    </script>
+</body>
+</html>

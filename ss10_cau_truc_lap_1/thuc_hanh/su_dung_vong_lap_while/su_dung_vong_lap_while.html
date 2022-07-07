@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss10-L10 Su dung vong lap while bai1</title>
+</head>
+<body>
+    <script>
+        /**
+         * Bài 1: Viết chương trình nhận vào một số từ hộp thoại,
+         *  việc nhập kết thúc khi người dùng nhập vào giá trị -1.
+         *  Mỗi giá trị nhập được sẽ được hiển thị ra và thực hiện
+         *  tính tổng các giá trị đó. 
+         */
+
+         let count = +prompt('Nhập vào số lần lặp: ')
+         let total = 0;
+         let num
+         while(count != 0) {
+            num = +prompt("Nhập vào 1 số: ");
+            alert('Số bạn vừa nhập: ' + num)
+            total += num
+            count --
+         }
+         alert("Tổng cộng: " + total)
+    </script>
+</body>
+</html>
