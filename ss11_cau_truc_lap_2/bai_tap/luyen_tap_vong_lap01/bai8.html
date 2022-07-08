@@ -32,20 +32,23 @@
         </div>
     </div>
 </body>
-<script>    
+<script>
+    // lấy ra các phần tử trong html
     let eNumMin = document.getElementById('numMin');
     let eNumMax = document.getElementById('numMax');
-    let emessage = document.getElementById('message');
+    let eMessage = document.getElementById('message');
     let enumberUserInput = document.getElementById('number-user-input');
     let ePlayAgain = document.getElementById('play-again');
     let eOk = document.getElementById('btn-oK');
     let ePlay = document.getElementById('btn-play');
     let eNumberRandom = document.getElementById('number-random');
-    let numberUserinput;
-    let count = 1;
-    let min = parseInt(eNumMin.value),
-        max = parseInt(eNumMax.value),
+    
+    let numberUserinput; // Số người chơi dự đoán
+    let count = 1; // số lần đoán
+    let min = parseInt(eNumMin.value), // giá trị giới hạn min
+        max = parseInt(eNumMax.value), // giá trị giới hạn max
         numberRandom;
+
     // khi thay đổi giá trị của giới hạn min
     eNumMin.addEventListener('change', function(){
         min = parseInt(eNumMin.value)
@@ -55,17 +58,22 @@
         max = parseInt(eNumMax.value)
     })
 
+    /**
+     * run() xử lý thắng thua
+     * 
+     */
     function run () {
             if(count == 6) {
                 numberUserinput = parseInt(enumberUserInput.value)
                 if(numberUserinput != numberRandom) {
-                    emessage.value = 'YOU LOSE!'
+                    // eMessage nội dung thông báo
+                    eMessage.value = 'YOU LOSE!'
                     eNumberRandom.value = numberRandom;
                     eOk.setAttribute('disabled','')
                     ePlayAgain.removeAttribute('disabled')
                 } else {
                     eNumberRandom.value = numberRandom;
-                    emessage.value = 'YOU WIN!'
+                    eMessage.value = 'YOU WIN!'
                     eOk.setAttribute('disabled', '')
                     ePlayAgain.removeAttribute('disabled')
                 }
@@ -73,14 +81,14 @@
                 numberUserinput = parseInt(enumberUserInput.value);
                 if(numberUserinput < numberRandom) {
                     console.log('so lan doan: ' +count);
-                    emessage.value = '[Lần '+count+']Số bạn đoán đang nhỏ hơn';
+                    eMessage.value = '[Lần '+count+']Số bạn đoán đang nhỏ hơn';
                     count ++;
                 } else if(numberUserinput > numberRandom) {
                     console.log('so lan doan: ' +count);
-                    emessage.value = '[Lần '+count+']Số bạn đoán đang lớn hơn';
+                    eMessage.value = '[Lần '+count+']Số bạn đoán đang lớn hơn';
                     count ++;
                 } else {
-                    emessage.value = 'YOU WIN!';
+                    eMessage.value = 'YOU WIN!';
                     eNumberRandom.value = numberRandom;
                     eOk.setAttribute('disabled', '');
                     ePlayAgain.removeAttribute('disabled')
@@ -108,7 +116,7 @@
         eNumMin.removeAttribute('disabled')
         eNumMin.value = 10;
         enumberUserInput.setAttribute('disabled','')
-        emessage.value = '';
+        eMessage.value = '';
         eNumberRandom.value = '';
         eOk.setAttribute('disabled', '');
     });
