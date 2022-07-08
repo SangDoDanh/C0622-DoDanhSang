@@ -1,25 +1,25 @@
-var value1 = document.getElementById('value1'), 
-    value2 = document.getElementById('value2'),
-    add = document.getElementById('addtion'),
-    sub = document.getElementById('subtraction'),
-    mun = document.getElementById('muntiplication'),
-    result = document.getElementById('result'),
-    div = document.getElementById('division');
+let value1 = document.getElementById('value1'); 
+let value2 = document.getElementById('value2');
+let add = document.getElementById('addtion');
+let sub = document.getElementById('subtraction');
+let mun = document.getElementById('muntiplication');
+let result = document.getElementById('result');
+const div = document.getElementById('division');
 
    
-add.addEventListener('click', function(e) {
+add.addEventListener('click', function() {
     result.value = parseFloat(value1.value) + parseFloat(value2.value);
 });
 
-sub.addEventListener('click', function(e) {
+sub.addEventListener('click', function() {
     result.value = parseFloat(value1.value) - parseFloat(value2.value);
 });
 
-mun.addEventListener('click', function(e) {
+mun.addEventListener('click', function() {
     result.value = parseFloat(value1.value) - parseFloat(value2.value);
 });
 
-div.addEventListener('click', function(e) {
+div.addEventListener('click', function() {
     if(value2.value != 0) {
         result.value = parseFloat(value1.value) / parseFloat(value2.value);
     } else {
