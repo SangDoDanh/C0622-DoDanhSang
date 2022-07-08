@@ -9,23 +9,110 @@
 <body>
     <div class="app">
         <div class="group">
-            <label for="number-random">Số của máy</label>
-            <input type="text" name="" id="number-random">
+            
+            <input type="number"  value="1" name="" id="numMin">
+            <span>Đến
+            <input type="number" value="10" name="" id="numMax">
+            <input type="button" value="Play" id="btn-play">
         </div>
         <div class="group">
-            <span>Thong bao</span>
-            <input type="text" name="" id="message" disabled>
+            <label for="number-random">Số của máy</label>
+            <input type="text" name="" id="number-random" disabled>
+        </div>
+        <div class="group">
+            <input style="width : 30%" type="text" name="" id="message" disabled>
         </div>
         <div class="group">
             <label for="number-user-input">Bạn dự đoán là:</label>
-            <input type="text" name="" id="number-user-input">
+            <input type="text" name="" id="number-user-input" disabled  >
         </div>
         <div class="group">
-            <input type="input" name="" id="btn-oK" value="OK">
+            <input type="button" name="" id="btn-oK" value="Đoán" disabled>
+            <input type="button" id="play-again" value="Chơi lại" disabled>
         </div>
     </div>
 </body>
-<script>
-    let numberRandom
+<script>    
+    let eNumMin = document.getElementById('numMin');
+    let eNumMax = document.getElementById('numMax');
+    let emessage = document.getElementById('message');
+    let enumberUserInput = document.getElementById('number-user-input');
+    let ePlayAgain = document.getElementById('play-again');
+    let eOk = document.getElementById('btn-oK');
+    let ePlay = document.getElementById('btn-play');
+    let eNumberRandom = document.getElementById('number-random');
+    let numberUserinput;
+    let count = 1;
+    let min = parseInt(eNumMin.value),
+        max = parseInt(eNumMax.value),
+        numberRandom;
+    // khi thay đổi giá trị của giới hạn min
+    eNumMin.addEventListener('change', function(){
+        min = parseInt(eNumMin.value)
+    });
+    // khi thay đổi giá trị của giới hạn max
+    eNumMax.addEventListener('change', function(){
+        max = parseInt(eNumMax.value)
+    })
+
+    function run () {
+            if(count == 6) {
+                numberUserinput = parseInt(enumberUserInput.value)
+                if(numberUserinput != numberRandom) {
+                    emessage.value = 'YOU LOSE!'
+                    eNumberRandom.value = numberRandom;
+                    eOk.setAttribute('disabled','')
+                    ePlayAgain.removeAttribute('disabled')
+                } else {
+                    eNumberRandom.value = numberRandom;
+                    emessage.value = 'YOU WIN!'
+                    eOk.setAttribute('disabled', '')
+                    ePlayAgain.removeAttribute('disabled')
+                }
+            } else {
+                numberUserinput = parseInt(enumberUserInput.value);
+                if(numberUserinput < numberRandom) {
+                    console.log('so lan doan: ' +count);
+                    emessage.value = '[Lần '+count+']Số bạn đoán đang nhỏ hơn';
+                    count ++;
+                } else if(numberUserinput > numberRandom) {
+                    console.log('so lan doan: ' +count);
+                    emessage.value = '[Lần '+count+']Số bạn đoán đang lớn hơn';
+                    count ++;
+                } else {
+                    emessage.value = 'YOU WIN!';
+                    eNumberRandom.value = numberRandom;
+                    eOk.setAttribute('disabled', '');
+                    ePlayAgain.removeAttribute('disabled')
+                }
+            }    
+        
+    }
+    // Khi click vào play
+    ePlay.addEventListener('click', function (e) {
+        numberRandom = Math.floor(Math.random() * (max - min) ) + min;
+        console.log(numberRandom);
+        eOk.removeAttribute('disabled');
+        eNumMax.setAttribute('disabled', '');
+        eNumMin.setAttribute('disabled', '');
+        enumberUserInput.removeAttribute('disabled')
+        e.target.setAttribute('disabled', '')
+    });
+    // khi click vao chơi lại
+    ePlayAgain.addEventListener('click', function(e) {
+        eOk.removeAttribute('disabled');
+        e.target.setAttribute('disabled', '');
+        ePlay.removeAttribute('disabled')
+        eNumMax.removeAttribute('disabled')
+        eNumMax.value = 1;
+        eNumMin.removeAttribute('disabled')
+        eNumMin.value = 10;
+        enumberUserInput.setAttribute('disabled','')
+        emessage.value = '';
+        eNumberRandom.value = '';
+        eOk.setAttribute('disabled', '');
+    });
+    // khi click btn ok
+    eOk.addEventListener('click', run)
 </script>
 </html>
