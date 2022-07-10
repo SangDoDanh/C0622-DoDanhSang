@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    let twoDimensionalArray = [];
+    // tao 1 mảng số nguyên ngẫu nhiên gồm 10 phần tử
+    function newArrayCreate() {
+        let result = [];
+        let numberRandom;
+        for(let i = 0; i < 10; i ++) {
+            // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+            numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+            result.push(numberRandom);
+        }
+        return result;
+    }
+    
+    
+    // tao 5 phần tử cho twoDimensionalArray
+    for(let i = 0; i < 5; i ++) {
+        let newArrayInteger = newArrayCreate();
+        twoDimensionalArray.push(newArrayInteger);
+    }
+
+    // hiển thị mảng hai chiều
+    for(let index in twoDimensionalArray) {
+        console.log('Row ' + index);
+        for(let number of twoDimensionalArray[index]) {
+            console.log(number);
+        }
+    }
+</script>
+</html>

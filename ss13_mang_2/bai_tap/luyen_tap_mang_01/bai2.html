@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+     * Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị
+     * trí của phần tử đó.
+     */
+
+    
+    let numberRandom;
+    let max = Number.MIN_VALUE;
+    let maxIndex = 0;
+    let intergerArray = [];
+
+    // khởi tạo 1 mảng ngẫu nhiên có 10 phần tử
+    for(let i = 0; i < 10; i ++) {
+        // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+        numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+        intergerArray.push(numberRandom);
+    }
+    // Hiển thị mảng vừa tạo
+    document.write('Dãy số ngẫu nhiên: ')
+    for(let number of intergerArray) {
+        document.write(number + ', ');
+    }
+    document.write('<br>');
+
+    // tim max và vị trí của max
+    for(let numberIndex in intergerArray) {
+        if(intergerArray[numberIndex] > max) {
+            max = intergerArray[numberIndex];
+            maxIndex = numberIndex;
+        }
+    }
+
+    document.write(`Giá trị lớn nhất: ${max} ở vị trí ${maxIndex}`);
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+     */
+
+    let numberRandom;
+    let intergerArray = [];
+    let countNegativeInteger = 0; // đếm số nguyên âm
+
+    // khởi tạo 1 mảng ngẫu nhiên có 10 phần tử
+    for(let i = 0; i < 10; i ++) {
+        // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+        numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+        intergerArray.push(numberRandom);
+    }
+    //Hiển thị mảng vừa tạo
+    document.write('Dãy số ngẫu nhiên: ')
+    for(let number of intergerArray) {
+        document.write(number + ', ');
+    }
+    
+    // Đếm số nguyên âm có trong danh sách
+    for(let number of intergerArray) {
+        if(number < 0) {
+            countNegativeInteger ++;
+        }
+    }
+    document.write(`<br>Có ${countNegativeInteger} số nguyên âm`);
+</script>
+</html>

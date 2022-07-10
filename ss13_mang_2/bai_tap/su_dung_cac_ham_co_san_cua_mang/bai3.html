@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    /**
+     * Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường
+     *  trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi
+     *  'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+     * 
+    */
+
+    let data = 'The Quick Brown Fox';
+    console.log(data);
+    data = data.split('');
+    // Chuyển chữ hoa thành chữ thường và ngược lại
+    data = data.map(function(value, index) {
+            if(value == value.toUpperCase()) {
+                value = value.toLowerCase();
+            } else {
+                value = value.toUpperCase();
+            }
+        return value
+    });
+    // chuyển array - string
+    data = data.join('');
+    console.log(data);
+</script>
+</html>

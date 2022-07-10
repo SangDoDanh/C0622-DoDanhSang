@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chess-table {
+            border-collapse: collapse;
+
+        }
+        .chess-table td {
+            border: 1px solid aqua;
+            height: 50px;
+            width: 50px;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="group-setting">
+            <label for="row">Row: </label>
+            <input type="number" id="row"  value="10">
+            <label for="row">Column: </label>
+            <input type="number" id="column" value="10">
+            <input type="button" value="Chess create" id="btn-create">
+        </div>
+        <div class="result">
+            
+        </div>
+    </div>
+</body>
+<script>
+    let eApp = document.querySelector('.app');
+    let eRow = document.getElementById('row');
+    let eColumn = document.getElementById('column');
+    let eCreate = document.getElementById('btn-create');
+    let eResult = document.querySelector('.result');
+
+    eCreate.addEventListener('click', function() {
+        let numberColumn = parseInt(eColumn.value);
+        let numberRow = parseInt(eRow.value);
+        let result = '';
+
+        console.log('column: ' + numberColumn + typeof numberColumn)
+        console.log('column: ' + numberRow + typeof numberRow)
+
+        for(let i = 0; i < numberRow; i++) {
+            if(i == 0) {
+                result += `<table class="chess-table">`
+            } 
+            result += '<tr>'
+            for(let j = 0; j < numberColumn; j++) {
+                result += '<td></td>'
+            }
+            result += '</tr>'
+            if(i == numberRow - 1) {
+                result += '</table>'
+            }
+        }
+        console.log(result);
+        eResult.innerHTML = result;
+    });
+
+</script>
+</html>

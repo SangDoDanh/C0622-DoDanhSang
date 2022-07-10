@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            font-family: sans-serif;
+        }
+        .app {
+            display: flex;
+        }
+        .box {
+            width: 200px;
+            margin-right: 32px;
+        }
+        .box h3 {
+            text-align: center;
+        }
+        .box p {
+            border: 1px solid aqua;
+            text-align: center;
+            padding: 4px 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="box">
+            <h3>BEFORE</h3>
+            <div class="before">
+
+            </div>
+        </div>
+        <div class="box">
+            <h3>AFTER</h3>
+            <div class="after">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let eApp = document.querySelector('.app');
+    let eBefore = document.querySelector('.before');
+    let eAfter = document.querySelector('.after');
+    let languages = [
+        'java',
+        'javascript',
+        'html-css',
+        'ruby',
+        'python'
+    ];
+    let newLanguages =[]; // mang languages sau khi reverse
+
+    // thuc hien dao nguoc vi tri cac phan tu trong arr
+    function reverse(arr) {
+        
+        let length = arr.length;
+        let newArr = [];
+
+        for(let i = length -1; i >= 0; i--) {
+            newArr.push(arr[i]);
+        }
+        return newArr;
+    }
+    
+    function display(arr) {
+        let result ='';
+
+        for(let item of arr) {
+            result += `<p>${item}</p>`;
+        }
+        return result;
+    }
+    // hien thi mang ban dau
+    eBefore.innerHTML = display(languages);
+    // thuc hien reverse mang va luu vao 1 mang moi
+    newLanguages = reverse(languages);
+    // hien thi mang sau khi reverse
+    eAfter.innerHTML = display(newLanguages);
+    
+</script>   
+</html>

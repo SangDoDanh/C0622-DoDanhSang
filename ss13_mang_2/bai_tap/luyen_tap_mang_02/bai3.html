@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // Khởi tạo các giá trị ngẫu nhiên bao gồm a-z, A-Z, 1-9
+    function randomValueListCreate () {
+        let result = [];
+        for(let i = 48; i <= 122; i++) {
+            if(i > 57 && i <65) {
+                continue;
+            } else if(i > 90 && i < 97) {
+                continue;
+            } else {
+                let value = String.fromCharCode(i);
+                if(Number.isInteger(value * 1) == true) {
+                    value = parseInt(value);
+                }
+                result.push(value);
+            }
+        }
+        return result;
+    }
+
+    // Tạo 1 số ngẫu nhiên trong khoản min - max
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+    }
+
+    // khởi tạo một mảng có giá trị ngẫu nhiên và số lượng mảng ngẫu nhiên
+    function arrayCreate(length, valueRange) {
+        let result = [];
+        let indexRandom;
+        for(let i = 0; i < length; i++) {
+            indexRandom = getRndInteger(0, valueRange.length);
+            result.push(valueRange[indexRandom]);
+        }
+        return result;
+    }
+
+    let valueRange = randomValueListCreate(); // Các giá trị ngẫu nhiên
+    let arrayLength = getRndInteger(10, 20); // số lượng phần tử của mảng
+    let arrayValue = arrayCreate(arrayLength, valueRange); // mảng ngẫu nhiên
+
+    console.log('Mảng ngẫu nhiên được tạo:');
+    console.log(arrayValue);
+    console.log('Số phần tử : ' + arrayValue.length);
+    
+</script>
+</html>

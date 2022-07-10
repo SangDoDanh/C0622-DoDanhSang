@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     *  Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+     *  Ví dụ, nếu một mảng chứa các ký tự  [ 'C', '0', '6', '2', '2', 'G', '1' ] 
+     *  sau khi thực hiện đảo ngược sẽ là "1G2260C"
+     */
+    
+    let fullName = 'Do DANH SANG';
+    
+    console.log('BEFORE: ' + fullName);
+    function reverseFullName (fullName) {
+        fullName = fullName.split('');
+        fullName = fullName.reverse();
+        fullName = fullName.join('');
+        return fullName;
+    }
+    console.log('AFTER: ' + reverseFullName(fullName));
+</script>
+</html>

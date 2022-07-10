@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ss9-B7 Luyen tap cau truc dieu kien 02</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-family: sans-serif;
+            font-size: 20px;
+            background-color: darkgrey;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .app {
+            width: 800px;
+            border: 1px solid  aqua;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 12px;
+        }
+        .app .heading {
+            color: aqua;
+            padding: 12px 8px;
+            margin-bottom: 16px;
+        }
+        .app .group {
+            display: flex;
+            margin-bottom: 16px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        .group input {
+            flex :1;
+            padding: 6px 8px;
+            font-size: 20px;
+        }
+        .group label{
+            width: 30%;
+        }
+        .group fieldset {
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid aqua;
+            padding: 12px 0;
+        }
+        #btn-calculate{
+            flex: none;
+            width: 30%;
+            background-color: rgb(237, 73, 73);
+            border: none;
+            margin-right: 4px;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            /* padding: 8px; */
+            
+        }
+        #pay-loan{
+           flex: 1;
+           color: rgb(237, 73, 73);
+           text-align: center;
+           background-color: transparent;
+           border: none;
+           border-bottom: 2px solid aqua;
+        }
+        #dependent-person{
+            font-size: 20px;
+            padding: 8px;
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h2 class="heading">TÍNH LÃI XUẤT NGÂN HÀNG/THÁNG</h2>
+        <div class="group">
+            <label for="fullname">Họ và tên: </label>
+            <input type="text" name="" id="fullname">
+        </div>
+        <div class="group">
+            <label for="loan-amount">Số tiền vay: </label>
+            <input type="text" name="" id="loan-amount">
+        </div>
+        <div class="group">
+            <label for="month">Số Tháng vay: </label>
+            <input type="number" name="" id="month">
+        </div>
+        <div class="group">
+            <fieldset style="width: 100%">
+                <legend>Lãi xuất</legend>
+               <div class="group-bank">
+                    <input type="radio" value="0.06" name="bank" id="techcom" class="bank-name">
+                    <label for="techcom">TechcomBank</label>
+               </div>
+                <div class="group-bank">
+                    <input type="radio" value="0.06" name="bank" id="vietcombank" class="bank-name">
+                    <label for="vietcombank">VietCombank</label>
+                </div>
+               <div class="group-bank">
+                    <input type="radio" value="0.065" name="bank" id="agribank" class="bank-name">
+                    <label for="agribank">Agribank</label>
+               </div>
+            </fieldset>
+        </div>
+        <div class="group">
+            <input type="button" id="btn-calculate" value="Tính">
+            <input type="text" name="" id="pay-loan" placeholder="Số tiền phải trả">
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

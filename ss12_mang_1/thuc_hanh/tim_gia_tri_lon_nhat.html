@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: sans-serif;
+        }
+        .app {
+            display: flex;
+        }
+        .box {
+            width: 300px;
+            margin-right: 32px;
+           
+        }
+        .data {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .data p {
+            margin-right: 8px;
+        }
+        .result {
+            border-bottom: 1px solid aqua;
+        }
+        .box h3 {
+            font-size: 23px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .box p {
+            width: 15%;
+            margin-bottom: 16px;
+            border: 1px solid aqua;
+            text-align: center;
+            padding: 4px 0;
+            border-radius: 2px;
+        }
+        
+        .group-search {
+            margin: 32px 0;
+            display: flex;
+
+
+        }
+        .btn {
+            padding: 8px;
+            font-size: 18px;
+            margin-left: 4px;
+            background-color: transparent;
+            border-radius: 2px;
+            border: 1px solid aqua;
+            cursor: pointer;
+        }
+        #btn-search {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="box">
+            <h3>DATA</h3>
+            <div class="data">
+
+            </div>
+        </div>
+        <div class="box">
+            <div class="group-search">
+                <input type="button" value="Đổi" id="btn-change" class="btn">
+                <input type="button" id="btn-search" value="Tìm Max" class="btn">
+            </div>
+            <div class="result">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let eApp = document.querySelector('.app');
+    let edata = document.querySelector('.data');
+    let eResult = document.querySelector('.result');
+    let eBtnSearch = document.getElementById('btn-search')
+    let eChange = document.getElementById('btn-change')
+    
+    let data = [];
+    
+    function init() {
+        let max = 100;
+        let min = -100;
+        let value;
+        data = [];
+        for(let i = 0; i < 20; i++) {
+            value = Math.floor(Math.random() * (max - min) ) + min;
+            data.push(value);
+        }
+    }
+    
+    // tìm max
+    function max(arr) {
+        let result = [];
+        let max = arr[0];
+
+        for(let item of arr) {
+            if(item > max) {
+                max = item;
+            }
+        }
+        result.push(max);
+        return result;
+    }
+
+    // Chuyển sang html
+    function display(arr) {
+        let result ='';
+
+        for(let item of arr) {
+            result += `<p>${item}</p>`;
+        }
+        return result;
+    }
+    // khoi tao gia tri ban dau
+    init();
+    // hien thi mang ban dau
+    edata.innerHTML = display(data);
+
+    // khi click search
+    eBtnSearch.addEventListener('click', function() {
+        let result = max(data);
+        eResult.innerHTML = display(result);
+    });
+    eChange.addEventListener('click', function() {
+        init();
+        edata.innerHTML = display(data);
+        eResult.innerHTML = '';
+    });
+</script>   
+</html>

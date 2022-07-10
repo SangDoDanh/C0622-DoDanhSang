@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên
+     * và đảo ngược các phần tử trong mảng đó.
+     */
+
+    let numberRandom;
+    let intergerArray = [];
+
+    // khởi tạo 1 mảng ngẫu nhiên có 10 phần tử
+    for(let i = 0; i < 10; i ++) {
+        // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+        numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+        intergerArray.push(numberRandom);
+    }
+    //Hiển thị mảng vừa tạo
+    document.write('Dãy số ngẫu nhiên: ')
+    for(let number of intergerArray) {
+        document.write(number + ', ');
+    }
+    document.write('<br>Đảo ngược dãy số:');
+    for(let i = intergerArray.length - 1; i >= 0; i--) {
+        document.write(intergerArray[i] + ', ');
+    }
+</script>
+</html>

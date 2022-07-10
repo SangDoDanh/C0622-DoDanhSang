@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+     *  Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên
+     *  lớn hơn hoặc bằng 10.
+     */ 
+
+    let numberRandom;
+    let count = 0;
+    let intergerArray = [];
+
+    for(let i = 0; i < 10; i ++) {
+        // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+        numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+        intergerArray.push(numberRandom);
+    }
+    document.write('Mảng tạo ngẫu nhiên: ');
+    for(let number of intergerArray) {
+        document.write(number + ", ");
+    }
+    
+    // lấy ra các phần tử lớn hơn hoặc bằng 10
+    for(let number of intergerArray) {
+        if(number >= 10) {
+            count ++;
+            document.write(number + '<br>');
+        }
+    }
+    document.write(`Có ${count} lớn hơn hoặc bằng 10!`);
+</script>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #message {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid aqua;
+        }
+        .display {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .display p {
+            width: 9%;
+            border: 1px solid aqua;
+            border-radius: 2px;
+            margin-right: 4px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .app {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .group-a, .group-b {
+            width: 50%;
+            border: 1px solid gray;
+        }
+        .group-c {
+            width: 100%;
+        }
+
+        .group h3 {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="group group-a">
+            <h3>A</h3>
+            <div class="display display-a">
+    
+            </div>
+        </div>
+        <div class="group group-b">
+            <h3>B</h3>
+            <div class="display display-b">
+    
+            </div>
+        </div>
+        <div class="group group-c">
+            <h3>C</h3>
+            <div class="display display-c">
+    
+            </div>
+        </div>
+    </div>
+    <input type="button" value="Nối A và B" id="btn-join">
+</body>
+
+<script>
+    let eBtnRemove = document.getElementById('btn-join');
+    let eDisplayA = document.querySelector('.display-a');
+    let eDisplayB = document.querySelector('.display-b');
+    let eDisplayC = document.querySelector('.display-c');
+    let numberRandom;
+    let intergerArray = [];
+    let countNegativeInteger = 0; // đếm số nguyên âm
+
+    // khởi tạo 1 mảng ngẫu nhiên có 10 phần tử
+    function initIntegerAArray() {
+        let result = []
+        for(let i = 0; i < 20; i ++) {
+            // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+            numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+            result.push(numberRandom);
+        }
+        return result;
+    }
+    // Hiển thị dãy số vừa tạo
+    function display(intergerArray, position) {
+        let sources = '';
+        for(let number of intergerArray) {
+        sources += `<p>${number}</p>`
+        }
+        position.innerHTML = sources;
+    }
+    let integerArrayA = initIntegerAArray();
+    let integerArrayB = initIntegerAArray();
+    display(integerArrayA, eDisplayA);
+    display(integerArrayB, eDisplayB);
+    
+    //click btn-join
+    eBtnRemove.addEventListener('click', function() {
+        let integerArrayC = integerArrayA.concat(integerArrayB);
+        display(integerArrayC, eDisplayC);
+    });
+</script>
+</html>

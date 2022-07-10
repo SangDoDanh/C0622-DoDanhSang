@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: sans-serif;
+        }
+        .app {
+            display: flex;
+        }
+        .box {
+            width: 300px;
+            margin-right: 32px;
+        }
+        .result {
+            border-bottom: 1px solid aqua;
+        }
+        .box h3 {
+            font-size: 23px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .box p {
+            margin-bottom: 16px;
+            border: 1px solid aqua;
+            text-align: center;
+            padding: 4px 0;
+            border-radius: 2px;
+        }
+        
+        .group-search {
+            margin: 32px 0;
+            display: flex;
+
+        }
+        #btn-search {
+            flex: 1;
+            font-size: 18px;
+            margin-left: 4px;
+            background-color: transparent;
+            border-radius: 2px;
+            border: 1px solid aqua;
+        }
+        #txt-search {
+            padding: 4px 8px;
+            border-radius: 2px;
+
+            width: 75%;
+            font-size: 18px;
+            outline: none;
+            border: 1px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="box">
+            <h3>LANGUAGES</h3>
+            <div class="data">
+
+            </div>
+        </div>
+        <div class="box">
+            <div class="group-search">
+                <input type="text" id="txt-search">
+                <input type="button" id="btn-search" value="Search">
+            </div>
+            <div class="result">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let eApp = document.querySelector('.app');
+    let edata = document.querySelector('.data');
+    let eResult = document.querySelector('.result');
+    let eBtnSearch = document.getElementById('btn-search')
+    let eTxtSearch = document.getElementById('txt-search')
+    let languages = [
+        'java',
+        'javascript',
+        'html-css',
+        'ruby',
+        'python'
+    ];
+    /**
+     * Tìm kiếm 1 phần tử trong mảng, giá trị trả về là 1 mảng mới
+     * chứa các phần tử tìm thấy
+     * @param {string} value: giá trị cần tìm
+     * @param {array} arr: tìm trong đây
+     */
+    function search(value, arr) {
+        let result = [];
+        for(let item of arr) {
+            if(item == value) {
+                result.push(value)
+            }
+        }
+        return result;
+    }
+    // Chuyển sang html
+    function display(arr) {
+        let result ='';
+
+        for(let item of arr) {
+            result += `<p>${item}</p>`;
+        }
+        return result;
+    }
+    // hien thi mang ban dau
+    edata.innerHTML = display(languages);
+
+    // khi click search
+    eBtnSearch.addEventListener('click', function() {
+        let value = eTxtSearch.value;
+        let result = search(value, languages);
+
+        if(result.length != 0) {
+            eResult.innerHTML = display(result);
+        } else {
+            eResult.innerHTML = `Không tìm thấy [${value}]`;
+        }
+    });
+</script>   
+</html>

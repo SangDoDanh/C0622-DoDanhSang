@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="full-name">Họ và tên</label>
+    <input type="text" id="full-name"> <br>
+
+    <label for="full-name-again">Nhập lại Họ và tên</label>
+    <input type="text" id="full-name-again"><br>
+    
+    <input type="button" value="Check" id="btn-check">
+    <p id="message"></p>
+
+</body>
+
+<script>
+    let eMessage = document.getElementById('message');
+    let eFullName = document.getElementById('full-name');
+    let eFullNameAgain = document.getElementById('full-name-again');
+    let eBtnCheck = document.getElementById('btn-check');
+
+    eBtnCheck.addEventListener('click', function() {
+        let inputValue = eFullName.value;
+        let inputValueAgain = eFullNameAgain.value;
+        
+        if(inputValue == inputValueAgain) {
+            eMessage.innerText = 'Trùng khớp';
+        } else {
+            eMessage.innerText = 'Không trùng khớp';
+        }
+    });
+</script>
+</html>

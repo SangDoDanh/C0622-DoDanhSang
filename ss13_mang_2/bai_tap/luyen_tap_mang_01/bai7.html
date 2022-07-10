@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #message {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="display">
+
+    </div>
+    <input type="text" name="" id="search">
+    <input type="button" value="Remove" id="btn-remove">
+    <input type="text" name="" id="message" disabled>
+</body>
+
+<script>
+    let eSearch = document.getElementById('search');
+    let eMessage = document.getElementById('message');
+    let eBtnRemove = document.getElementById('btn-remove');
+    let eDisplay = document.querySelector('.display');
+    let numberRandom;
+    let intergerArray = [];
+    let countNegativeInteger = 0; // đếm số nguyên âm
+
+    // khởi tạo 1 mảng ngẫu nhiên có 10 phần tử
+    for(let i = 0; i < 10; i ++) {
+        // numberRandom là 1 số ngẫu nhiên trong khoảng -100 đến 100
+        numberRandom = Math.floor(Math.random() * (100 + 100) ) - 100;
+        intergerArray.push(numberRandom);
+    }
+    // Hiển thị dãy số vừa tạo
+    function display(intergerArray) {
+        let sources = '';
+        for(let number of intergerArray) {
+        sources += `<p>${number}</p>`
+        }
+        eDisplay.innerHTML = sources;
+    }
+    // Xóa 1 số trong danh sách và trả về danh sách mới
+    function removeANumber(number, intergerArray, indexNumber) {
+        return intergerArray.splice(indexNumber, 1);
+    }
+
+    display(intergerArray);
+    
+    //click btn-remove
+    eBtnRemove.addEventListener('click', function() {
+        let number = parseInt(eSearch.value);
+        let isFind = intergerArray.indexOf(number);
+        if(isFind > -1) {
+            let newIntergerArray = removeANumber(number, intergerArray, isFind);
+            display(intergerArray);
+            eMessage.value = `[${number}] đã được xóa`;
+        } else {
+            eMessage.value = `[${number}] không tìm thấy`;
+        }
+    });
+</script>
+</html>
