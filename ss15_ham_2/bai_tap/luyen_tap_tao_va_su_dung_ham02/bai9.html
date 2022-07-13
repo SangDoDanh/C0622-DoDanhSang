@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+     *  kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+     *  Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. 
+     */
+    function mySearch(value, arr) {
+        let isFind = false;
+        let count = 0;
+        for(let item of arr) {
+            if(item === value) {
+                count ++;
+                isFind = true;
+            }
+        }
+        if(isFind) {
+            return count;
+        } else {
+            return -1;
+        }
+    }
+
+    // demo 
+    let init = [1, 2, 'a', 1, 5, 'a'];
+    console.log(mySearch('a', init)); // 2
+    console.log(mySearch('b', init)); // -1
+
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let Mydate = function(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        //get
+        this.getDay = function() {
+            return this.day;
+        }
+        this.getMonth = function() {
+            return this.month;
+        }
+        this.getYear = function() {
+            return this.year;
+        }
+        //set
+        this.setDay = function(day) {
+    		this.day  = day;
+				}
+        this.setMonth = function(month) {
+            this.month  = month;
+        }
+        this.setYear = function(year) {
+            this.year  = year;
+        }
+        this.setDate = function(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        this.toString = function() {
+            return `Date: ${this.day}, Month: ${this.month}, Year: ${this.year}`;
+        }
+    }
+
+    let date = new Mydate(2, 2, 2022);
+
+    console.log(date);
+    let day = date.getDay();        //2
+    let month = date.getMonth();    //2
+    let year = date.getYear();      //2022
+    date.setDay(12);
+    date.setMonth(7);
+    date.setYear(2022);
+    console.log(date);
+    date.setDate(1, 1, 1111);
+    console.log(date.toString());
+</script>
+</html>

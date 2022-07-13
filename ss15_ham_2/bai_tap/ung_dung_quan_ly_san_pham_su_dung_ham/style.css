@@ -1,0 +1,56 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.group {
+    width: 100%;
+    padding: 12px 8px;
+}
+
+.group-add {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+#display {
+    margin-top: 24px;
+}
+
+.group-display {
+    display: flex;
+    padding: 12px 0;
+}
+.group-display:nth-child(odd) {
+    background-color: slategrey;
+}
+.group-display:nth-child(even) {
+    background-color: darkgray;
+}
+
+.group-display span {
+    flex: 1;
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+#btn-edit, #btn-delete {
+    width: 20%;
+    padding: 4px;
+    margin-right: 8px;
+}
+
+#btn-edit {
+}
+
+#btn-delete {
+
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #canvas-circles {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas-circles"></canvas>
+</body>
+<script>
+    class Circle {
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+        createCircle() {
+            let eCanvas = document.getElementById('canvas-circles');
+            let ctx = eCanvas.getContext('2d');
+            ctx.beginPath();
+            console.log(this.x, this.y, this.radius, this.color);
+            ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+    function colorRGBRandom() {
+        let redColor = Math.floor(Math.random() * 256);
+        let blueColor = Math.floor(Math.random() * 256);
+        let greenColor = Math.floor(Math.random() * 256);
+        let color = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
+        return color; 
+    }
+
+    function randomX() {
+        let x = Math.floor(Math.random() * (window.innerWidth -100)); 
+        return x;
+    }
+
+    function randomY() {
+        let y = Math.floor(Math.random() * (window.innerHeight -100)); 
+        return y;
+    }
+
+    function randomR() {
+        let r = Math.floor(Math.random() * 100);
+        return r;
+    }
+
+    let eCanvas = document.getElementById('canvas-circles');
+    let width = window.innerWidth - 100;
+    let height = window.innerHeight -100;
+    // set height and width cho canvas
+    eCanvas.width = width;
+    eCanvas.height = height;
+
+    
+    for(let i = 0; i < 100; i++) {
+        let circle = new Circle(randomX(), randomY(), randomR(), colorRGBRandom());
+        circle.createCircle();
+    }
+
+   
+</script>
+
+</html>

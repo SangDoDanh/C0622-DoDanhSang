@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class SmartPhone {
+        constructor(phoneName, pin, dataMessagesSend, status, dataMessagesReceive, dataMess) {
+            // Tên điện thoại(string)
+            this.phoneName = phoneName; 
+            // thời lượng pin (number)
+            this.pin = pin <= 100 ? pin : 100; 
+            // Lưu trữ tin nhắn nhận được (array)
+            this.dataMessagesReceive = dataMessagesReceive;
+            // lưu trữ tin nhắn đã gửi (array)
+            this.dataMessagesSend = dataMessagesSend; 
+            // Lưu trữ tin nhắn được tạo mới (aray)
+            this.dataMess = dataMess;
+            // trạng thái điện thoại (boolean
+            this.status = status;
+        }
+
+        getDataMessagesReceive () {
+            return this.dataMessagesReceive;
+        }
+
+        getDataMessagesSend() {
+            return this.dataMessagesSend;
+        }
+
+        getPin() {
+            return this.pin;
+        }
+        
+
+        getDataMessages() {
+            return this.dataMessages;
+        }
+
+        getPhoneName() {
+            return this.phoneName;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+        getDataMess() {
+            return this.dataMess;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        // gửi tin nhắn
+        // @content (string) nội dung tin nhắn
+        // @phone (object) điện thoại nhận tin nhắn
+        sendMessages(content, phone) {
+            if(this.getStatus()) {
+                this.creatMess(content, phone.getPhoneName()); // tạo mới tin nhắn
+                let dataMes = this.getDataMess();
+                for(let mes of dataMes) {
+                    phone.getDataMessagesReceive().push(mes);
+                    this.dataMessagesSend.push(mes);
+                    dataMes.shift();
+                    this.lossOfEnergy();
+                }
+                console.log(`Đã gửi đến ${phone.getPhoneName()}`);
+            } else {
+                console.log('Chưa bật điện thoại');
+            }
+        }
+
+        // tạo mới 1 tin nhắn và lưu vào tin nhắn đã soạn
+        // @content (string) nội dung tin nhắn
+        creatMess(content, to) {
+            let message = {
+                mess: content,
+                from: this.getPhoneName(),
+                to: to
+            };
+            this.dataMess.push(message);
+        }
+
+        // hao hụt pin
+        lossOfEnergy() {
+            this.pin = this.pin - 1;
+        }
+
+        // xem tin nhắn đã gửi
+        viewSentMessages() {
+            if(this.getStatus()) {
+                let messagesList = this.getDataMessagesSend();
+                console.log(`[${this.getPhoneName()}] Hộp thư đi`);
+                if(messagesList.length > 0) {
+                    for(let mes of messagesList) {
+                        console.log(`Nội dung: '${mes.mess}' | Nơi nhận: ${mes.to}`)
+                    }
+                } else {
+                    console.log('Trống');
+                }
+            } else {
+                console.log('Chưa bật điện thoại')
+            }
+        }
+
+        // xem tin nhắn đến
+        viewInMessages() {
+           if(this.getStatus()) {
+                let messagesList = this.getDataMessagesReceive();
+                console.log(`[${this.getPhoneName()}] Hộp thư đến`);
+                if(messagesList.length > 0) {
+                    for(let mes of messagesList) {
+                        console.log(`Nội dung: '${mes.mess}' | Nơi gửi: ${mes.from}`)
+                    }
+                } else {
+                    console.log('Trống');
+                }
+           } else {
+                console.log('Chưa bật điện thoại');
+           }
+        }
+
+        // Hiển thị thông tin điện thoại
+        showInfo() {
+            let info = `${this.phoneName} | status ${this.status} 
+                        | Hộp thư đến ${this.getDataMessagesReceive().length}
+                        | Hộp thư đi ${this.getDataMessagesSend().length}
+                        | pin ${this.getPin()}%`;
+            console.log(info);
+        }
+
+        // bật điện thoại
+        begin() {
+            this.setStatus(true);
+        }
+        
+        // tắt điện thoại
+        end() {
+            this.setStatus(false);
+        }
+    }
+
+    // khởi tạo 2 điện thoại
+    let iphone = new SmartPhone('iphone13', 100, [], true, [], []);
+    let samsung = new SmartPhone('samsung22', 100, [], true, [], []);
+
+    // demo
+    // điện thoại iphone gửi 'Xin chào samsung' đến điện thoại samsung
+    iphone.sendMessages('xin chào samsung', samsung);
+    // điện thoại samsung gửi 'xin chào iphone' đến điện thoại iphone
+    samsung.sendMessages('xin chào iphone', iphone);
+
+    // Xem tin nhắn nhắn đến
+    iphone.viewInMessages();
+    samsung.viewInMessages();
+
+    // Xem tin nhắn đã gửi
+    iphone.viewSentMessages();
+    samsung.viewSentMessages();
+
+    // Xem thông tin điện thoại
+    iphone.showInfo();
+    samsung.showInfo();
+
+    // tắt điện thoại
+    iphone.end();
+
+    // gửi tin nhắn sau khi tắt
+    iphone.sendMessages('Khỏe không ?', samsung);
+
+    // bật điện thoại
+    iphone.begin();
+
+    // gửi tin nhắn sau khi bật
+    iphone.sendMessages('Khỏe không ?', samsung);
+
+    // xem tin nhắn trên samsung khi iphone gửi lần 2
+    samsung.viewInMessages();
+
+</script>
+</html>

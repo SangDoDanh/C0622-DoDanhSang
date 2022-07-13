@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class SwichButton {
+        constructor(status) {
+            this.status = status;
+            this.lamp = null;
+        }
+
+        getLamp(){
+            return this.lamp
+        }
+        connectLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        on() {
+            this.getLamp().turnOn();
+        }
+
+        off() {
+            this.getLamp().turnOf();
+        }
+    }
+
+    class Lamp {
+        constructor(status, name) {
+            this.status = status;
+            this.name = name
+        }
+
+        turnOn() {
+            this.status = true;
+            console.log(`[${this.name}] Chiếu sáng.....`);
+        }
+
+        turnOf() {
+            this.status = false;
+            console.log(`[${this.name}] Tắt sáng.....`);
+        } 
+
+        showInfo() {
+            return `[${this.name}]  Status: ${this.status}`;
+        }
+    }
+
+    // Tạo mới 2 công tắc và 1 bóng đèn
+    let swichButton1 = new SwichButton(true); 
+    let swichButton2 = new SwichButton(true); 
+    let lamp = new Lamp(false, 'Diot');
+    // kết nối 2 công tắc với bóng đèn
+    swichButton1.connectLamp(lamp);
+    swichButton2.connectLamp(lamp);
+    // công tắc 1 bật đèn lamp
+    swichButton1.on();
+    // công tắc 2 tắt đèn lamp
+    swichButton2.off();
+
+    // xem thông tin đèn lamp
+    console.log(lamp.showInfo());
+    
+</script>
+</html>

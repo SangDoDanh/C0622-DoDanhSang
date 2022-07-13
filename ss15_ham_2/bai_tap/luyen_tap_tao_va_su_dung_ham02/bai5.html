@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    function minOfThreeNumber(number1, number2, number3) {
+        number1 = parseInt(number1);
+        number2 = parseInt(number2);
+        number3 = parseInt(number3);
+        
+        let result = number1;
+
+        return result < number2 ? (result < number3 ? result : number3) :
+                                    number2 < number3 ? number2 : number3;
+    }
+
+    // demo 
+    console.log(minOfThreeNumber(7, 8, 9));     // 7
+    console.log(minOfThreeNumber(7, -8, 9));    // -8
+    console.log(minOfThreeNumber(7, 8, 1));     // 1
+</script>
+</html>

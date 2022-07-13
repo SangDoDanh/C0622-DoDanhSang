@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="fahrenheit-id">Fahrenheit: </label>
+    <input type="text" name="" id="fahrenheit-id">
+    <label for="result">Celcius</label>
+    <input type="text" id="result" disabled>
+</body>
+<script>
+    let eFah = document.getElementById('fahrenheit-id');
+    let eCel = document.getElementById('result');
+
+    function convertToCelcius() {
+        let fahValue = parseFloat(eFah.value);
+        eCel.value = (fahValue - 32)/1.8;
+    }
+    eFah.addEventListener('input', convertToCelcius);
+</script>
+</html>

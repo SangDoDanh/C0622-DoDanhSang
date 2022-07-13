@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #canvas-rectangle {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas-rectangle"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(canvas, x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+            this.canvas = canvas;
+        }
+
+        createRectangle() {
+            let ctx = eCanvas.getContext('2d');
+            ctx.beginPath();
+            ctx.rect(this.x, this.y, this.width, this.height);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+        areaRectangle() {
+            return this.height * this.width;
+        }
+
+        showRectangle() {
+            return `Rectangle[ Width: ${this.width} Height: ${this.height} Area: ${this.areaRectangle()}]`;
+        }
+    }
+
+    let eCanvas = document.getElementById('canvas-rectangle');
+    let width = window.innerWidth - 100;
+    let height = window.innerHeight -100;
+    // set height and width cho canvas
+    eCanvas.width = width;
+    eCanvas.height = height;
+
+    // tạo màu rgb() ngẫu nhiên
+    function colorRGBRandom() {
+        let redColor = Math.floor(Math.random() * 256);
+        let blueColor = Math.floor(Math.random() * 256);
+        let greenColor = Math.floor(Math.random() * 256);
+        let color = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
+        return color; 
+    }
+
+    // tạo tạo độ x ngẫu nhiên
+    function randomX() {
+        let x = Math.floor(Math.random() * (window.innerWidth -100)); 
+        return x;
+    }
+
+    // tạo tọa độ y ngẫu nhiên 
+    function randomY() {
+        let y = Math.floor(Math.random() * (window.innerHeight -100)); 
+        return y;
+    }
+    // tạo chiều dài ngẫu nhiên
+    function randomWidth() {
+        let width = Math.floor(Math.random() * (window.innerWidth -200)); 
+        return width;
+    }
+
+    // tạo chiều cao ngẫu nhiên 
+    function randomHeight() {
+        let height = Math.floor(Math.random() * (window.innerHeight -200)); 
+        return height;
+    }
+
+    let rectangle = new Rectangle(eCanvas, randomX(), randomY(), randomWidth(), randomHeight(), colorRGBRandom());
+    rectangle.createRectangle();
+    console.log(rectangle.showRectangle());
+</script>
+</html>

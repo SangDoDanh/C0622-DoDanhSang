@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+        }
+
+        convertToF() {
+            return (9/5)*this.celcius +32; 
+        }
+        convertToK() {
+            return this.celcius + 273.5;
+
+        }
+    }
+
+    let temperature = new Temperature(38);
+
+    console.log('do F: ' + temperature.convertToF());
+    console.log('do K: ' + temperature.convertToK());
+</script>
+</html>

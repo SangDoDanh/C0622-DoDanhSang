@@ -12,13 +12,17 @@
     <script>
         //Tính tổng của 20 số đầu tiên trong dãy fibonacci.
         let count = 1
-        let number1 = 0, number2 = 1, fibonacci, total = 0;
+        let number1 = 0;
+        let number2 = 1;
+        let fibonacci;
+        let total = 0;
         while(count <= 20) {
             fibonacci = number1 + number2
             total += fibonacci;
+            document.write(fibonacci + '<br>');
             number1 = number2;
             number2 = fibonacci;
-            count ++
+            count ++;
             
         }
         alert('Tổng của 20 số đầu tiên trong dãy fibonacci:  ' + total)

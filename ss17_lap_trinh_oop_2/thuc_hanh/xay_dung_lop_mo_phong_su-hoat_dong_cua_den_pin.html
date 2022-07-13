@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Battery {
+        constructor (energy) {
+            this.energy = energy;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy;
+        }
+        
+        getEnergy(energy) {
+            return this.energy;
+        }
+
+        decreaseEnergy() {
+            if(this.getEnergy() > 0) {
+                this.energy --;
+            }
+        }
+    }
+
+    class FlashLamp {
+        constructor(status, pin) {
+            this.status = status;
+            this.pin = pin;
+        }
+
+        getStatus(){
+            return this.status;
+        }
+
+        getPin() {
+            return this.pin;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        light() {
+            if(this.getStatus()) {
+                console.log('Chiếu sáng!');
+                this.getPin().decreaseEnergy();
+            }
+        }
+
+        turnOn(){
+            if(this.getStatus() == false) {
+                console.log('Bật đèn');
+                this.setStatus(true);
+            }  
+        }
+        
+        turnOf() {
+            this.getStatus(false);
+        }
+
+        ShowInfo() {
+            let info = `Status: ${this.getStatus()} Pin: ${this.getPin().getEnergy()}%`;
+            console.log(info);
+        }
+    }
+
+    // demo
+    let pin = new Battery(100);
+    let flashLamp = new FlashLamp(false, pin);
+
+    // bật đèn
+    flashLamp.turnOn();
+    flashLamp.light();
+    // xem thông tin
+    flashLamp.ShowInfo();
+</script>
+</html>

@@ -37,13 +37,15 @@
     </div>
 </body>
 <script>
-    // Hiển thị n số nguyên tố đầu tiên
+    
+    // n: số lượng số nguyên tố muốn hiển thị
     let n = +prompt('Nhập vào số lượng số nguyên tố đầu tiên: ');
-    let index = 1;
-    let primeNumber = 2;
+    let index = 1;      // nếu là số nguyên tố thì tăng lên 1
+    let primeNumber = 2;// số cần kiểm tra có phải là số nguyên tố hay không
     let source = '';
     let eApp = document.querySelector('.app');
 
+    // Hiển thị n số nguyên tố đầu tiên
     while(index <= n) {
         if(isPrimeNumber(primeNumber)) {
             source += `<span>${primeNumber}</span>`
@@ -56,7 +58,7 @@
     function write(value) {
         eApp.innerHTML = source;
     }
-
+    // Kiểm tra 1 số có phải là số nguyên tố hay không
     function isPrimeNumber(number) {
         if(number < 1){
             return false

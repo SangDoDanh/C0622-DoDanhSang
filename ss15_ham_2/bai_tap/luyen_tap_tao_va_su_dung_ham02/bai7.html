@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    let number1 = 9;
+    let number2 = 10;
+    console.log('before: ', number1, number2); // before:  9 10
+    function reverseTwoNumber(value1, value2) {
+        
+        number2 = value1;
+        number1 = value2;
+    }
+
+    // thực hiện đổi giá trị
+    reverseTwoNumber(number1, number2);
+    console.log('after: ', number1, number2); // after:  10 9
+
+</script>
+</html>
