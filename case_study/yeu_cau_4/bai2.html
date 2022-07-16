@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let words = 'cabcad';
+    let result = [];
+    words = words.split('');
+    for(let i = 0; i < words.length; i++) {
+        if(i == 0) {
+            result.push(words[i]);
+        } else {
+            if(result.includes(words[i]) == false) {
+                result.push(words[i]);
+            }
+        }
+    }
+    // chuỗi ban đầu
+    console.log(words.join(''));
+    // số kí tự khác nhau
+    console.log(result.length);
+</script>
+</html>

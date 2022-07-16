@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let word = prompt('Nhập vào ký tự muốn kiểm tra');
+    word = word.toUpperCase();
+    let isNguyenAm = false;
+    switch (word) {
+        case 'O':
+            isNguyenAm = true;
+            break;
+        case 'U':
+            isNguyenAm = true;
+            break;
+        case 'I':
+            isNguyenAm = true;
+            break;
+        case 'A':
+            isNguyenAm = true;
+            break;
+        case 'E':
+            isNguyenAm = true;
+            break;
+    }
+    
+    if(isNguyenAm) {
+        document.write(word + ' Là nguyên âm');
+    }else {
+        document.write(word + ' Không phải nguyên âm');
+    }
+</script>
+
+</html>

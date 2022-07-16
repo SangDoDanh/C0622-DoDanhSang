@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    // tính tổng các phần tử trong mảng từ 0 đến count
+    function sumByCount(arr, count) {
+        let result = 0;
+        for(let i = 0; i <= count; i ++) {
+            result += arr[i];
+        }
+        return result;
+    }
+
+    let numbers = new Array(10);
+    
+    // Tạo giá trị ngẫu nhiên cho mảng numbers
+    for(let i = 0; i < numbers.length; i++) {
+        numbers[i] = Math.floor(Math.random() * 100);
+    }
+
+    console.log(numbers);
+    let prefixSums = new Array(10);
+    
+    // gán giá trị cho prefixSums
+    for(let i = 0; i < prefixSums.length; i++) {
+        prefixSums[i] = sumByCount(numbers, i);
+    }
+
+    console.log(prefixSums);
+
+</script>
+</html>

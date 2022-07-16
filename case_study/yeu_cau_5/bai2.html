@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPrime(number) {
+        if(number < 1 ) {
+            return false;
+        }
+        let count = 0;
+        for(let i = 1; i <= number; i++) {
+            if(number % i == 0) {
+                count ++;
+            }
+            if(count > 2) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // tạo mảng 2 chiều với giá trị và số lượng ngẫu nhiên 
+    // lọc ra các phần tử là số nguyên tố
+    function createTwoArrayAndCountPrimes() {
+        let row = Math.floor(Math.random() * 100 + 1);
+        let arr = new Array(row);
+        let arrPrimes = [];
+        for(let i = 0; i < arr.length; i ++) {
+            let col = Math.floor(Math.random() * 100 + 1);
+            arr[i] = new Array(col);
+            for(let j = 0; j < arr[i].length; j ++) {
+                arr[i][j] = Math.floor(Math.random() * 100);
+                if(isPrime(arr[i][j])){
+                    arrPrimes.push(arr[i][j]);
+                }
+            }
+        }
+        console.log('Các số nguyên tố: ', arrPrimes);
+        return(arrPrimes.length);
+    }
+
+    console.log(createTwoArrayAndCountPrimes());
+    
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Product {
+        constructor(productName, price) {
+            this.productName = productName;
+            this.price = price;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        getProductName() {
+            return this.productName;
+        }
+        showInFor() {
+            return 1;
+        }
+    }
+
+    // Khởi tạo cam, cafe, chuối, dừa
+    let orange = new Product('cam', 10);
+    let cafe = new Product('cafe', 5);
+    let banana = new Product('banana', 8);
+    let coco = new Product('Dừa', 8);
+
+    // tao menu
+    let run = true;
+    let total = 0;
+    while (run) {
+        let chose = prompt(`MENU\n1. Cam\n2. Dừa\n3. cafe\n4. Banana\n5. Exit`);
+        chose = parseInt(chose);
+        switch (chose) {
+            case 1:
+                total += monny(orange);
+                break;
+            case 2:
+                total += monny(coco);
+                break;
+            case 3:
+                total += monny(cafe);
+                break;
+            case 4:
+                total += monny(banana);
+                break;
+            case 5:
+                alert('Tổng tiền: ' + total);
+                run = false;
+                break;
+        }
+    }
+    function monny(product) {
+        let amount = prompt(`Nhập số lượng\n${product.getProductName()} ----Price: ${product.getPrice()}`);
+        return parseFloat(amount) * product.getPrice();
+    }
+</script>
+
+</html>

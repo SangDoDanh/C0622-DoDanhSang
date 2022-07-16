@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function sumNumbersEvenOfTwoArray() {
+        let m = +prompt('Row: ');
+        let n = +prompt('Col:');
+        let twoArr = new Array(m);
+        let total = 0;
+        for(let i = 0; i < twoArr.length; i++) {
+            twoArr[i] = new Array(n);
+            for(let j = 0; j < twoArr[i].length; j++) {
+                twoArr[i][j] = +prompt('Nhập giá trị: ', 1);
+                if(twoArr[i][j] % 2 == 0) {
+                    total += twoArr[i][j];
+                }
+            }
+        }
+        console.log(twoArr);
+        return total;
+    }
+    console.log('Tổng các số chẵn: ', sumNumbersEvenOfTwoArray());
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function wordClean(words) {
+        let result = '';
+        words = words.trim();
+        words = words.split(' ');
+        for(let i = 0; i < words.length; i++) {
+            if(words[i].length > 0) {
+                result += words[i] + ' ';
+            }
+        }
+        result = result.trim();
+        result = upperWordFirst(result);
+        return result;
+    }
+
+    function upperWordFirst(words) {
+        words = words.split(' ');
+        let result = '';
+        for(let i = 0; i < words.length; i++) {
+            console.log(words[i]);
+            for(let j = 0; j < words[i].length; j++) {
+                if(j == 0) {
+                    result += words[i][j].toUpperCase();
+                } else {
+                    result += words[i][j].toLowerCase();
+                }
+            }
+            result += ' ';
+        }
+        return result.trim();
+    }
+
+
+
+</script>
+</html>

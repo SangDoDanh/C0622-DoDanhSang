@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let valueInput = prompt('Enter numbers: ');
+
+    valueInput = valueInput.split('');
+
+    function convertString(number) {
+        number = parseInt(number);
+        let result = '';
+        switch (number) {
+            case 1:
+                result = 'mot';
+                break;
+            case 2:
+                result = 'hai';
+                break;
+            case 3:
+                result = 'ba';
+                break;
+            case 4:
+                result = 'bon';
+                break;
+            case 5:
+                result = 'nam';
+                break;
+            case 6:
+                result = 'sau';
+                break;
+            case 7:
+                result = 'bay';
+                break;
+            case 8:
+                result = 'tam';
+                break;
+            case 9:
+                result = 'chin';
+                break;
+            default: 
+                result = 'khong';
+                break;
+        }
+
+        return result;
+    }
+    let valueString =''
+    for(let word of valueInput) {
+        valueString += ' ' + convertString(word);
+    }
+    console.log(valueString);
+</script>
+
+</html>
