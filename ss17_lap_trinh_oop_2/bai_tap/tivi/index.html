@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Tivi {
+        constructor(name, id, channels, status, volumes) {
+            this.name = name;
+            this.id = id;
+            this.channels = channels;
+            this.status = status;
+            this.volumes = volumes;
+        }
+        getStatus() {
+            return this.status;
+        }
+
+        getVolumes() {
+            return this.volumes;
+        }
+
+        getChannels() {
+            return this.channels;
+        }
+
+        setVolumes(vol) {
+            this.volumes = vol;
+        }
+
+        setChannels(chan) {
+            this.channels = chan;
+        }
+
+        setStatus(stt) {
+            this.status = stt; 
+        }
+
+    }
+
+    class Remote {
+        constructor(id, tivi) {
+            this.id = id;
+            this.tivi = tivi;
+        }
+
+        turnOn() {
+            this.tivi.setStatus(true);
+        }
+        
+        turnOf() {
+            this.tivi.setStatus(false);
+        }
+
+        changeChannel(chan) {
+            this.tivi.setChannels(chan);
+        }
+
+        changeVolumes(vol) {
+            this.tivi.setVolumes(vol);
+        }
+    }
+
+    // demo
+
+    let lg45 = new Tivi('LG45','lg45',10, true, 50);
+    let remote = new Remote('r01', lg45);
+
+    // turn on tivi
+
+    remote.turnOn();
+    console.log(lg45.getStatus());
+    
+    // change channels
+    remote.changeChannel(3);
+    console.log(lg45.getChannels());
+
+    // change volume
+    remote.changeVolumes(99);
+    console.log(lg45.getVolumes());
+
+</script>
+</html>
