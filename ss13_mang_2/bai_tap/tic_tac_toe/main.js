@@ -1,7 +1,7 @@
 let eApp = document.querySelector('.app');
 let ePlayAgain = document.getElementById('btn-play-again');
-let row = 10;
-let col = 10;
+let row = 20;
+let col = 20;
 let isX = true;
 let dataXO = inIt(row, col);
 /**
@@ -27,19 +27,23 @@ function checkWin() {
     for(let i = 0; i < dataXO.length; i++) {
         for(let j = 0; j < dataXO[i].length; j++) {
             // Duyệt win theo chiều ngang
-            if(j <= dataXO[i].length - 3) {
+            if(j <= dataXO[i].length - 5) {
                 if(dataXO[i][j] == 'X' &&
                    dataXO[i][j+1] == 'X' && 
                    dataXO[i][j+2] == 'X' &&
+                   dataXO[i][j+3] == 'X' &&
+                   dataXO[i][j+4] == 'X' &&
                    !checkStartEnd('O', i, j, 'h')) {
                     return true;
                 }
             }
 
-            if(j <= dataXO[i].length - 3) {
+            if(j <= dataXO[i].length - 5) {
                 if(dataXO[i][j] == 'O' &&
                    dataXO[i][j+1] == 'O' && 
                    dataXO[i][j+2] == 'O' &&
+                   dataXO[i][j+3] == 'O' &&
+                   dataXO[i][j+4] == 'O' &&
                    !checkStartEnd('X', i, j, 'h')) {
                     return true;
 
@@ -47,19 +51,23 @@ function checkWin() {
             }
 
             // Duyệt win theo chiều dọc
-            if(i <= dataXO.length - 3) {
+            if(i <= dataXO.length - 5) {
                 if(dataXO[i][j] == 'X' &&
                    dataXO[i + 1][j] == 'X' && 
                    dataXO[i + 2][j] == 'X' && 
+                   dataXO[i + 3][j] == 'X' && 
+                   dataXO[i + 4][j] == 'X' && 
                    !checkStartEnd('O', i, j, 'v')) {
                     return true;
                 }
             }
 
-            if(i <= dataXO.length - 3) {
+            if(i <= dataXO.length - 5) {
                 if(dataXO[i][j] == 'O' &&
                    dataXO[i + 1][j] == 'O' && 
                    dataXO[i + 2][j] == 'O' && 
+                   dataXO[i + 3][j] == 'O' && 
+                   dataXO[i + 4][j] == 'O' && 
                    !checkStartEnd('X', i, j, 'v')) {
                     return true;
 
@@ -67,19 +75,23 @@ function checkWin() {
             }
 
             // duyệt chéo từ trái qua phải
-            if(i <= dataXO.length - 3 && j <= dataXO[i].length - 3) {
+            if(i <= dataXO.length - 5 && j <= dataXO[i].length - 5) {
                 if(dataXO[i][j] == 'O' &&
                    dataXO[i + 1][j + 1] == 'O' && 
                    dataXO[i + 2][j + 2] == 'O' && 
+                   dataXO[i + 3][j + 3] == 'O' && 
+                   dataXO[i + 4][j + 4] == 'O' && 
                    !checkStartEnd('X', i, j, 'l')) {
                     return true;
 
                 }
             }
-            if(i <= dataXO.length - 3 && j <= dataXO[i].length - 3) {
+            if(i <= dataXO.length - 5 && j <= dataXO[i].length - 5) {
                 if(dataXO[i][j] == 'X' &&
                    dataXO[i + 1][j + 1] == 'X' && 
                    dataXO[i + 2][j + 2] == 'X' && 
+                   dataXO[i + 3][j + 3] == 'X' && 
+                   dataXO[i + 4][j + 4] == 'X' && 
                    !checkStartEnd('O', i, j, 'l')) {
                     return true;
 
@@ -87,19 +99,23 @@ function checkWin() {
             }
             
             // duyệt chéo từ phải qua trái
-            if(i <= dataXO.length - 3 && j >= 2) {
+            if(i <= dataXO.length - 5 && j >= 4) {
                 if(dataXO[i][j] == 'X' &&
                    dataXO[i + 1][j - 1] == 'X' && 
                    dataXO[i + 2][j - 2] == 'X' &&
+                   dataXO[i + 3][j - 3] == 'X' &&
+                   dataXO[i + 4][j - 4] == 'X' &&
                    !checkStartEnd('O', i, j, 'r')) {
                     return true;
 
                 }
             }
-            if(i <= dataXO.length - 3 && j >= 2) {
+            if(i <= dataXO.length - 5 && j >= 4) {
                 if(dataXO[i][j] == 'O' &&
                    dataXO[i + 1][j - 1] == 'O' && 
                    dataXO[i + 2][j - 2] == 'O' &&
+                   dataXO[i + 3][j - 3] == 'O' &&
+                   dataXO[i + 4][j - 4] == 'O' &&
                    !checkStartEnd('X', i, j, 'r')) {
                     return true;
 

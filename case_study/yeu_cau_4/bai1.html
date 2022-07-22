@@ -10,6 +10,8 @@
     
 </body>
 <script>
+    // Xóa dấu cách
+    //'   Truong    Tan   Hai  ' -> 'Truong Tan Hai'
     function wordClean(words) {
         let result = '';
         words = words.trim();
@@ -24,11 +26,12 @@
         return result;
     }
 
+    // Viết hoa chữ cái đầu và chữ cái sau viết thường
+    // 'tRuonG' -> 'Truong'
     function upperWordFirst(words) {
         words = words.split(' ');
         let result = '';
         for(let i = 0; i < words.length; i++) {
-            console.log(words[i]);
             for(let j = 0; j < words[i].length; j++) {
                 if(j == 0) {
                     result += words[i][j].toUpperCase();
