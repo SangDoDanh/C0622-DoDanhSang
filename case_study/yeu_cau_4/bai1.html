@@ -14,15 +14,18 @@
     //'   Truong    Tan   Hai  ' -> 'Truong Tan Hai'
     function wordClean(words) {
         let result = '';
+        let wordMax = '';
         words = words.trim();
         words = words.split(' ');
         for(let i = 0; i < words.length; i++) {
             if(words[i].length > 0) {
                 result += words[i] + ' ';
+                wordMax = wordMax.length > words[i].length ? wordMax : words[i];
             }
         }
         result = result.trim();
         result = upperWordFirst(result);
+        console.log('Tu dai nhat: ', wordMax);// phan tu co do dai lon nhat
         return result;
     }
 
@@ -43,8 +46,11 @@
         }
         return result.trim();
     }
-
-
+    // demo
+    let wordDemo = 'tRuong    TaN   HAI ';
+    let wordUpperFirst = upperWordFirst(wordDemo); //'Truong    Tan   Hai'
+    let result = wordClean(wordUpperFirst); // 'Truong Tan Hai' 
+    console.log(result);
 
 </script>
 </html>
