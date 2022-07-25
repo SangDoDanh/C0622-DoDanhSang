@@ -6,6 +6,19 @@ let eCheck = document.querySelector('.btn-check');
 let dataTickets = []; // lưu vé số người dùng mua
 let dataResult = []; // lưu kết quả vé số trúng
 
+class Tikert {
+    constructor(value) {
+        this.value = value;
+    }
+
+    getValue() {
+        return this.value;
+    }
+
+    setValue(value) {
+        this.value = value;
+    }
+}
 // Tạo giá trị vé số ngẫu nhiên
 function createArrRandom(number) {
     let result = [];
@@ -33,7 +46,7 @@ function buyTicket(){
     for(let number of eNumbersList) {
         dataTicket.push(number.value);
     }
-    dataTickets.push(dataTicket);
+    dataTickets.push(new Tikert(dataTicket));
     console.log(dataTickets);
     eDisplay.innerHTML = renderHTML(dataTickets);
 }
@@ -43,8 +56,8 @@ function renderHTML(arr) {
     let sourse = '';
     for(let i = 0; i < arr.length; i++) {
         sourse+= '<div class="group-ticket">';
-        for(let j = 0; j < arr[i].length; j++) {
-            sourse += `<input type="number" disabled class="number-ticket" value="${arr[i][j]}">`;
+        for(let j = 0; j < arr[i].getValue().length; j++) {
+            sourse += `<input type="number" disabled class="number-ticket" value="${arr[i].getValue()[j]}">`;
         }
         sourse +='</div>'
     }
@@ -54,15 +67,19 @@ function renderHTML(arr) {
 // Dò kết quả
 function luckyNumbers() {
     let luckyTikets = createArrRandom(6);
-    let lucky = dataTickets.includes(luckyTikets);
+    let dataTicketsCoppy = [];
+    for(let ticket of dataTickets) {
+        dataTicketsCoppy.push(ticket.getValue());
+    }
+    let lucky = dataTicketsCoppy.includes(luckyTikets);
     let res = '';
     if(lucky){
         res += `<h3 class="heading-result">Kết Quả Xổ Số</h3>`;
-        res += renderHTML([luckyTikets]);
+        res += renderHTML([new Tikert(luckyTikets)]);
         res += `<h3>Xin Chúc Mừng! bạn đã trúng</h3>`;
     } else{
         res += `<h3 class="heading-result">Kết Quả Xổ Số</h3>`;
-        res += renderHTML([luckyTikets]);
+        res += renderHTML([new Tikert(luckyTikets)]);
         res +=`<h3>Chúc bạn may mắn lần sau!</h3>`;
     }
     eResult.innerHTML = res;
